@@ -1,0 +1,72 @@
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/HomePage.vue";
+import PageView from "../views/PageView.vue";
+import axios from "../axios";
+import { store } from "../store";
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    // {
+    //   path: "/",
+    //   name: "home",
+    //   component: HomeView,
+    //   meta: { requiresAuth: true },
+    // },
+    {
+      path: "/",
+      name: "Home",
+      component: Home,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("../views/SignIn.vue"),
+    },
+    {
+      path: "/contact",
+      name: "ContactPage",
+      component: () => import("../views/ContactPage.vue"),
+    },
+    {
+      path: "/page/:name",
+      name: "PageView",
+      component: PageView,
+    },
+   
+
+    // {
+    //   path: "/:pathMatch(.*)*",
+    //   name: "NotFound",
+    //   component: () => import("../views/NotFound.vue"),
+    // }
+  ],
+});
+
+router.beforeEach(async (to, from) => {
+  try {
+    const authenticated = await is_authenticated();
+    if (to.meta.requiresAuth && !authenticated) {
+      // User is not authenticated, redirect to login
+      return { path: "/login" };
+    }
+    if ((to.path === "/login" || to.path === "/register") && authenticated) {
+      // User is authenticated and trying to access login, redirect to dashboard
+      return { path: "/" };
+    }
+  } catch (err) {
+    alert('server is down');
+  }
+});
+
+async function is_authenticated() {
+  try {
+    const response = await axios.get("profile/");
+    store.updateName(response.data.username);
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
+export default router;
