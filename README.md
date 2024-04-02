@@ -7,7 +7,7 @@ description: The Dashboard
 ---
 
 ## Dashboard
-The initial HackGuardia website.
+The initial VueDash.org Vue Dashboard
 
 ```npm run dev```
 
