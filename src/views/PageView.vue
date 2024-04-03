@@ -9,6 +9,9 @@
     <div v-if="pageRoute == 'privacy'">
       <PrivacyPage />
     </div>
+    <div v-if="pageRoute == 'contact'">
+      <ContactPage />
+    </div>
   </section>
 </template>
 
@@ -17,6 +20,7 @@ import { useRoute } from "vue-router";
 import AboutPage from '../components/pages/AboutPage.vue';
 import HelpPage from "../components/pages/HelpPage.vue";
 import PrivacyPage from "../components/pages/PrivacyPolicy.vue";
+import ContactPage from "../components/pages/ContactPage.vue"
 const route = useRoute();
 const pageRoute = route.params.name; 
 </script>

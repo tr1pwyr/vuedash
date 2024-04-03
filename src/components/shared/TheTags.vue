@@ -137,7 +137,7 @@ li.tag {
 }
 
 .tags{
-	margin: 1rem 0 0 2rem;
+	margin: 1rem 0 0 1rem;
 }
 
 .tag{

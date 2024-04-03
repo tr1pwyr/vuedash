@@ -11248,17 +11248,9 @@ output{
   background-color: rgba(20, 20, 20, 0.9)!important;
 }
 
-.swal2-input, .swal2-html-container{
-  color:#ffffff!important;
-}
-
-.swal2-icon-content{
-  color: #ff9822;
-}
-
-.swal2-input-label{
-  color:#ffffff;
-}
+.swal2-input, .swal2-html-container{ color:#ffffff!important; }
+.swal2-icon-content{ color: #ff9822; }
+.swal2-input-label{ color:#ffffff; }
 
 .main-header {
   padding: 0!important;
@@ -11288,10 +11280,13 @@ output{
 
 .brand a {
   color: rgba(254, 254, 254, .66) !important;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: 900;
+  font-size: 1.33rem;
+  letter-spacing: 2px;
   text-decoration: none;
+  text-transform: uppercase;
 }
+
 
 .brand a:hover {
   color: #6ab5db !important;

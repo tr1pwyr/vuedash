@@ -24,22 +24,17 @@ const router = createRouter({
       component: () => import("../views/SignIn.vue"),
     },
     {
-      path: "/contact",
-      name: "ContactPage",
-      component: () => import("../views/ContactPage.vue"),
-    },
-    {
       path: "/page/:name",
       name: "PageView",
       component: PageView,
     },
    
 
-    // {
-    //   path: "/:pathMatch(.*)*",
-    //   name: "NotFound",
-    //   component: () => import("../views/NotFound.vue"),
-    // }
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: () => import("../views/NotFound.vue"),
+    }
   ],
 });
 

@@ -123,7 +123,7 @@ onMounted(() => {
 
 <style scoped>
 .stats {
-	padding: 2rem 1rem 1rem 1rem;
+	padding: 2rem;
 	margin: 0 2rem;
 	font-weight: 700;
 	font-size: 1.75rem;

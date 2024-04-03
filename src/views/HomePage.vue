@@ -1,3 +1,9 @@
+<style>
+.icon-label{
+
+}
+</style>
+
 <template>
 
   <div id="dashboard">
@@ -6,9 +12,9 @@
       <div class="pt-5 d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
 
         <ul
-          class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 align-items-center">
+          class="nav flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between align-items-center">
           <li>
-            <a @click="forceRerender" class="d-block py-2 link-dark text-decoration-none" title=""
+            <a @click="forceRerender" class="d-block py-2 text-decoration-none" title=""
               data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
               <BIconExclamationOctagonFill class="bi-icon fs-2" />
               <br /><span class="icon-label">Reset Data</span>
@@ -49,7 +55,7 @@
         </ul>
         <div class="dropdown">
           <a href="#"
-            class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
+            class="d-flex align-items-center justify-content-center p-3 text-decoration-none dropdown-toggle"
             id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
 
           </a>
@@ -66,7 +72,7 @@
       <DashboardChart class="pt-3" />
       <DataStats v-if="renderComponent" />
       <TheTags />
-      <BarCharts />
+      <!-- <BarCharts /> -->
       <DataTable />
     </section>
 

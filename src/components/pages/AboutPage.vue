@@ -2,8 +2,6 @@
   <section class="section pt-5">
     <div class="page-container">
 
-      <img :src="content.img" :alt="content.title" class="img-fluid float-start col-4">
-
       <div class="about-text">
         <h3>{{ content.title }}</h3>
         <p class="about-text">{{ content.intro }}</p>
@@ -12,7 +10,7 @@
         <h3> {{ content.subTitle }} </h3>
         <p class="text">{{ content.details }}</p>
 
-        <div class="mx-5 mb-5" v-for="d in data" key="d">
+        <div class="my-5" v-for="d in data" key="d">
           <h6>{{ d.title }}</h6>
           <p>{{ d.text }}  - <a :href="d.link">{{ d.linkText }}</a></p>
          
@@ -28,30 +26,29 @@
 import { ref } from 'vue'
 const content = ref(
   {
-    title: 'About HackGuardia',
-    intro: "From proactive risk assessments to the implementation of robust security measures, we work closely with our clients to identify vulnerabilities and deploy tailored solutions that mitigate risks effectively.",
-    more: "Leveraging cutting-edge technologies and best practices, we empower our clients to navigate the digital landscape with confidence, knowing that their assets and data are safeguarded against evolving threats.  Specifically we manage and lock-down networks, impliment secure web apps, and trouble-shoot legacy infrastructure and devices.",
-    subTitle: "What We Do",
-    details: 'Chances are we can help you too.  What follows is a more in depth look at what we do. The links are to our "checklists" as it were. Feel free to use them as guidelines whether or not we work together.  A safer Internet is in everyone\'s best interest.',
-    img: '/images/about.webp'
+    title: 'About VueDash.org',
+    intro: "I started looking around for a Vue template that I could use for the dashboard part of a project I was working on.  I could not find anything that was simple, easy to integrate, and professional.  Suffice to say I did not find what I was looking for.",
+    more: "This being the case I decided to make one, and make it available.",
+    subTitle: "Use Terms",
+    details: 'You are free to download this template and use it as you see fit.  I do not warranty it, do not offer free support, etc.',
   });
 const data = ref(
   [
     {
-      title: 'Risk Assessment',
-      text: 'Risk assessment involves identifying, analyzing, and evaluating potential risks and threats to an organization\'s information systems, data, and technology infrastructure. The primary goal of risk assessment is to understand the vulnerabilities and potential impacts of cyber threats to prioritize and implement appropriate security measures effectively',
+      title: 'Component Based',
+      text: 'If you are looking for a specific chart or part of the homepage you best bet is to look at the /components folder.',
       linkText: 'Here\'s a brief outline of the proces',
       link: '/topic/risk'
     },
     {
-      title: 'Implement Security Measures',
-      text: 'By implementing robust security measures, organizations can significantly reduce their exposure to cyber threats, enhance their resilience to security incidents, and safeguard their critical assets and sensitive information from unauthorized access and exploitation.',
+      title: 'CSS Style',
+      text: 'I have moved (almost) all of the CSS from the component files to the main style.css file.  I know that this is not dogmatically Vue but since there isn\'t much that\'s not shown right away scoping doesn\'t buy you much...  This may not be my final answer, but it is different this version so I thought I would mention it. ',
       linkText: 'Here are some key steps involved in implementing such measures',
       link: '/topic/sec'
     },
     {
-      title: 'Secure Critical Systems',
-      text: 'Ensuring the resilience of critical server systems is paramount for maintaining business continuity and minimizing the impact of potential disruptions or cyber attacks',
+      title: 'Page Views',
+      text: 'The pages ( this page, contact, etc.) use the PageView.vue file in the views folder.  It uses userRoute() to handle route.params to direct it to the correct page.',
       linkText: 'Here are somw strategies for ensuring critical systems resilience.',
       link: '/topic/critical'
     }

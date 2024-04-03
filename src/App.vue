@@ -18,7 +18,7 @@ const logout = async () => {
 
 <template>
   <Header />
-  <section class="container-fluid">
+  <section class="">
     <router-view :key="$route.fullPath" />
   </section>
   <Footer />

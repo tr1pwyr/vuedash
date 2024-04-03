@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <h5>Topics:</h5>
+          <h5>External:</h5>
           <ul class="list-unstyled">
             <li v-for="link in externalLinks" :key="link.id">
               <a :href="link.link">{{ link.title }}</a>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <h5>External:</h5>
+          <h5>Links:</h5>
           <ul class="list-unstyled">
             <li v-for="link in moreLinks" :key="link.id">
               <a :href="link.link">{{ link.title }}</a>
@@ -43,7 +43,6 @@
     </div>
 
     <div class="copyright-text">
-      <img :src="data.img" :alt="data.site">
       <p class="mt-2">&copy; {{ data.year }} 
         <a :href="data.link"> {{ data.site }}</a> 
         {{ data.copy }}
@@ -57,9 +56,8 @@
 import { ref } from 'vue'
 const data = ref({
   year: new Date().getFullYear(),
-  link: "/",
-  site: "HackGuardia",
-  img: "/images/footer-logo.webp",
+  link: "https://vuedash.org",
+  site: "VueDash.org",
   copy: "All Rights Reserved.",
 });
 const internalLinks = ref([
@@ -75,7 +73,7 @@ const internalLinks = ref([
   },
   {
     title: "Contact Us",
-    link: "/contact",
+    link: "/page/contact",
     id: "3",
   },
   {
@@ -87,18 +85,18 @@ const internalLinks = ref([
 
 const externalLinks = ref([
   {
-    title: "Risk Assessment",
-    link: "/topic/risk",
+    title: "Priv-Mssg",
+    link: "https://priv-mssg.com",
     id: "6",
   },
   {
-    title: "Critical Systems",
-    link: "/topic/critical",
+    title: "Trip Kendall",
+    link: "https://tripkendall.com",
     id: "7",
   },
   {
-    title: "Security Measures",
-    link: "/topic/sec",
+    title: "Tr1pwyr@Twitter",
+    link: "https://twitter.com/tr1pwyr",
     id: "8",
   },
   {
@@ -135,22 +133,22 @@ const moreLinks = ref([
 const hotLinks = ref([
   {
     title: "Digital Security",
-    link: "/article/security",
+    link: "https://hackguardia/article/security",
     id: "16",
   },
   {
     title: "Ransomeware",
-    link: "/article/ransomware",
+    link: "https://hackguardia/article/ransomware",
     id: "17",
   },
   {
     title: "Persoanl Privacy",
-    link: "/article/privacy",
+    link: "https://hackguardia/article/privacy",
     id: "18",
   },
   {
     title: "Deep Fakes",
-    link: "/article/deepfakes",
+    link: "https://hackguardia/article/deepfakes",
     id: "19",
   },
 
