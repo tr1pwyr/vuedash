@@ -90,4 +90,12 @@ import { data } from '../../js/leaderBoardData.js'
 h6{
 	margin-left: .5rem;
 }
+
+.red-text{
+	color:#b4483d;
+}
+
+.green-text{
+	color: #73ca8b;
+}
 </style>

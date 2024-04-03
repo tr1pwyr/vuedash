@@ -27,7 +27,7 @@ const tags = [
 		id: 4,
 		name: 'SSH Logins',
 		link: '#',
-		cat: 'sucsess',
+		cat: 'success',
 		count: 1,
 	},
 	{
@@ -90,7 +90,7 @@ const tags = [
 		id: 4,
 		name: 'App Launched',
 		link: '#',
-		cat: 'sucsess',
+		cat: 'success',
 		count: 5,
 	},
 	{
@@ -104,7 +104,7 @@ const tags = [
 		id: 4,
 		name: 'email sent',
 		link: '#',
-		cat: 'sucsess',
+		cat: 'success',
 		count: 13,
 	},
 ]
@@ -212,14 +212,15 @@ li.warning:hover {
 	color: #fccb3a;
   background-color: #2c2714;
 }
-.sucsess {
+.success {
 	border: 1px solid #55a66c;
 	color: #55a66c;
   background-color: #172925;
 }
-li.sucsess:hover {
+li.success:hover {
 	border: 1px solid #74c78b;
 	color: #73ca8b;
   background-color: #13221e;
 }
+
 </style>

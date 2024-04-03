@@ -10,11 +10,24 @@
         <h3> {{ content.subTitle }} </h3>
         <p class="text">{{ content.details }}</p>
 
+        <div class="blockquote-wrapper">
+          <div class="blockquote">
+            <h1>
+              People sleepin' on the blockquote...
+            </h1>
+            <h4>&mdash;Tr1pwyr</h4>
+          </div>
+        </div>
+
+
         <div class="my-5" v-for="d in data" key="d">
           <h6>{{ d.title }}</h6>
-          <p>{{ d.text }}  - <a :href="d.link">{{ d.linkText }}</a></p>
-         
+          <p>{{ d.text }} 
+            <!-- <a :href="d.link">{{ d.linkText }}</a> -->
+          </p>
+
         </div>
+
       </div>
 
     </div>
@@ -36,7 +49,7 @@ const data = ref(
   [
     {
       title: 'Component Based',
-      text: 'If you are looking for a specific chart or part of the homepage you best bet is to look at the /components folder.',
+      text: 'If you are looking for a specific chart or part of the homepage you best bet is to look at the /components folder.  The header and footer are in the layout sub-folder, most of the rest of the components are in the shared and pages sub folders respectively.',
       linkText: 'Here\'s a brief outline of the proces',
       link: '/topic/risk'
     },
@@ -48,7 +61,7 @@ const data = ref(
     },
     {
       title: 'Page Views',
-      text: 'The pages ( this page, contact, etc.) use the PageView.vue file in the views folder.  It uses userRoute() to handle route.params to direct it to the correct page.',
+      text: 'The pages ( this page, contact, etc.) use the PageView.vue file in the views folder.  It uses userRoute() to handle route.params to direct it to the correct page.  The components for pages are in /components/pages',
       linkText: 'Here are somw strategies for ensuring critical systems resilience.',
       link: '/topic/critical'
     }

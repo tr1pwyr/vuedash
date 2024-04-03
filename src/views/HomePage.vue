@@ -20,11 +20,11 @@
               <br /><span class="icon-label">Reset Data</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li>
             <a @click="toggleSettings" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Home">
               <BIconGearWideConnected class="bi-icon fs-2" />
-              <br /> <span class="icon-label">Settings</span>
+              <br /> <span class="icon-label">Details</span>
             </a>
           </li>
 
@@ -32,7 +32,7 @@
             <a href="#" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Dashboard">
               <BIconGraphDown class="bi-icon fs-2" />
-              <br /><span class="icon-label">Charts & Graphs</span>
+              <br /><span class="icon-label">The Charts</span>
             </a>
           </li>
 
@@ -45,7 +45,7 @@
           </li>
 
           <li>
-            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+            <a href="/#monitoring" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Orders">
               <BIconIncognito class="bi-icon fs-2" />
               <br /><span class="icon-label">Monitoring</span>
@@ -72,8 +72,14 @@
       <DashboardChart class="pt-3" />
       <DataStats v-if="renderComponent" />
       <TheTags />
-      <!-- <BarCharts /> -->
+    
       <DataTable />
+  
+      <div id = "monitoring">
+        <MasonaryData />
+      </div>
+
+        <BarCharts />
     </section>
 
   </div>
@@ -88,6 +94,7 @@ import TheTags from "../components/shared/TheTags.vue"
 import DashSettings from "../components/shared/DashSettings.vue"
 import DataTable from "../components/shared/DataTable.vue"
 import DropDowns from "../components/shared/DropDowns.vue"
+import MasonaryData from "../components/shared/MasonaryData.vue"
 import { store } from "../store";
 import { plByMonth } from '../js/data'
 import {

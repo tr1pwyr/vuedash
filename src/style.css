@@ -256,6 +256,67 @@ blockquote {
   color: #ffffff;
 }
 
+.blockquote-wrapper {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.blockquote {
+   position: relative;
+   font-weight: 800;
+   color: rgba(255, 255, 255, .5);
+   padding: 10px 0;
+   width: 100%;
+   max-width: 750px;
+   z-index: 1;
+   margin: 20px auto;
+   align-self: center;
+   border-top: solid 3px #212121;
+   border-bottom: solid 3px #212121;;
+}
+
+/* Blockquote header */
+.blockquote h1 {
+   position: relative;
+   color: #3e3e3e;
+   font-size: 40px;
+   font-weight: 800;
+   line-height: 1;
+   margin: 0;
+}
+
+/* Blockquote right double quotes */
+.blockquote:after {
+   position: absolute;
+   content: "”";
+   color:  #212121;;
+   font-size: 10rem;
+   line-height: 0;
+   bottom: -43px;
+   right: 30px;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+   .blockquote h1 {
+       font-size: 60px;
+  }
+
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+   position: relative;
+   color: #292a2b;
+   font-size: 1.4rem;
+   font-weight: normal;
+   line-height: 1;
+   margin: 0;
+   padding-top: 20px;
+   z-index: 1;
+}
+
 b,
 strong {
   font-weight: 900;
@@ -4593,25 +4654,13 @@ fieldset:disabled .btn {
   display: none;
 }
 
-
-.navbar-dark {
-  --bs-navbar-color: rgba(255, 255, 255, 0.55);
-  --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
-  --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
-  --bs-navbar-active-color: #fff;
-  --bs-navbar-brand-color: #fff;
-  --bs-navbar-brand-hover-color: #fff;
-  --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
 .card {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
   --bs-card-border-width: 1px;
   --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: 0.625rem;
+  --bs-card-border-radius: 0.75rem;
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: calc(0.625rem - 1px);
   --bs-card-cap-padding-y: 0.5rem;
@@ -4620,7 +4669,7 @@ fieldset:disabled .btn {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: rgba(21, 25, 26, .5) !important;
+  /* --bs-card-bg: rgba(21, 25, 26, .5) !important; */
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -4666,6 +4715,7 @@ fieldset:disabled .btn {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
+  font-size: .9rem;
 }
 
 .card-title {
@@ -11261,7 +11311,7 @@ output{
 }
 
 .brand {
-  padding: 1rem 2rem 1rem 1rem;
+  padding: .75rem 2rem 1rem .75rem;
   margin: 5px 0;
   background-image: linear-gradient(to bottom left, transparent 50%, rgb(40, 46, 49) 30%), linear-gradient(#282e31, #282e31), linear-gradient(#282e31, #282e31);
   background-size: 25px 25px, 100% 100%, 100% 100%;
@@ -11281,8 +11331,8 @@ output{
 .brand a {
   color: rgba(254, 254, 254, .66) !important;
   font-weight: 900;
-  font-size: 1.33rem;
-  letter-spacing: 2px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
 }

@@ -2,11 +2,11 @@
   <header class="main-header sticky">
     <nav class="navbar">
       <div class="brand">
-        <a class="" href="/">VueDash.org</a>
+        <a class="" href="/"><BIconReception3 class="b-icon" />VueDash.org</a>
       </div>
       <div class="help-button">
         <a @click="handleClick()" class="btn btn-primary">
-        Download Dashboard
+        <BIconGithub class="b-icon" /> Download Dashboard
         </a>
       </div>
     </nav>
@@ -19,5 +19,13 @@ const router = useRouter();
 const handleClick = () => {
   router.push("/page/help/#help")
 }
+import { 
+	BIconGithub, BIconReception3
+	} from "bootstrap-icons-vue";
 </script>
 
+<style>
+.b-icon{
+  margin-top: -4px;
+}
+</style>
