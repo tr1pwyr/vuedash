@@ -12,7 +12,7 @@ import { ref } from 'vue'
 import { useRouter, useRoute } from "vue-router";
 import { store } from "../../store";
 import swal from 'sweetalert2';
-import AuthForm from '../AuthForm.vue';
+import AuthForm from './AuthForm.vue';
 
 const router = useRouter();
 const route = useRoute();

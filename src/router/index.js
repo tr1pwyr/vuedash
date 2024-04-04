@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/HomePage.vue";
 import PageView from "../views/PageView.vue";
-import axios from "../axios";
+import axios from "../js/axios";
 import { store } from "../store";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // this is how my simple backend login deal works on the front-end
     // {
     //   path: "/",
     //   name: "home",

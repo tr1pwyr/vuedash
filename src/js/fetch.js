@@ -1,6 +1,6 @@
 import axios from "./axios";
 import { shallowRef } from "vue";
-import { store } from "./store";
+import { store } from "../store";
 
 export const hasErrorOccured = shallowRef(false);
 export const errorMessage = shallowRef(null);
