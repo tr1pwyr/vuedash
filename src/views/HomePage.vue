@@ -2,6 +2,9 @@
 .icon-label{
 
 }
+.dashboard-menu ul li:hover {
+  cursor: pointer;
+}
 </style>
 
 <template>
@@ -12,19 +15,18 @@
       <div class="pt-5 d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
 
         <ul
-          class="nav flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between align-items-center">
+          class="nav flex-sm-column flex-row flex-nowrap mx-auto text-center justify-content-between align-items-center">
           <li>
-            <a @click="forceRerender" class="d-block py-2 text-decoration-none" title=""
-              data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+            <a @click="forceRerender" class="d-block py-2 text-decoration-none cursor-pointer" title="Reset Data">
               <BIconExclamationOctagonFill class="bi-icon fs-2" />
-              <br /><span class="icon-label">Reset Data</span>
+              <div class="icon-label">Reset Data</div>
             </a>
           </li>
           <li>
-            <a @click="toggleSettings" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+            <a @click="toggleSettings" class="nav-link py-3" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Home">
               <BIconGearWideConnected class="bi-icon fs-2" />
-              <br /> <span class="icon-label">Details</span>
+              <div class="icon-label">Details</div>
             </a>
           </li>
 
@@ -32,7 +34,7 @@
             <a href="#" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Dashboard">
               <BIconGraphDown class="bi-icon fs-2" />
-              <br /><span class="icon-label">The Charts</span>
+              <div class="icon-label">The Charts</div>
             </a>
           </li>
 
@@ -40,7 +42,7 @@
             <a href="#" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Orders">
               <BIconHddNetworkFill class="bi-icon fs-2" />
-              <br /><span class="icon-label">The Network</span>
+              <div class="icon-label">The Network</div>
             </a>
           </li>
 
@@ -48,7 +50,7 @@
             <a href="/#monitoring" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Orders">
               <BIconIncognito class="bi-icon fs-2" />
-              <br /><span class="icon-label">Monitoring</span>
+              <div class="icon-label">Monitoring</div>
             </a>
           </li>
 
@@ -69,7 +71,7 @@
         <DashSettings v-if="showSettings" />
       </transition>
       <DropDowns v-if="renderComponent" />
-      <DashboardChart class="pt-3" />
+      <LineChart/>
       <DataStats v-if="renderComponent" />
       <TheTags />
     
@@ -87,18 +89,17 @@
 </template>
 
 <script setup>
-import DashboardChart from "../components/shared/DashboardChart.vue";
-import BarCharts from "../components/shared/BarCharts.vue"
+import LineChart from "../components/dashboard/LineChart.vue";
+import BarCharts from "../components/dashboard/BarCharts.vue"
 import DataStats from "../components/shared/DataStats.vue"
 import TheTags from "../components/shared/TheTags.vue"
-import DashSettings from "../components/shared/DashSettings.vue"
+import DashSettings from "../components/dashboard/DashSettings.vue"
 import DataTable from "../components/shared/DataTable.vue"
 import DropDowns from "../components/shared/DropDowns.vue"
 import MasonaryData from "../components/shared/MasonaryData.vue"
 import { store } from "../store";
 import { plByMonth } from '../js/data'
 import {
-  BIconDashSquare,
   BIconGearWideConnected,
   BIconGraphDown,
   BIconHddNetworkFill,

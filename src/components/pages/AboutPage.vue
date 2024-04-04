@@ -2,9 +2,11 @@
   <section class="section pt-5">
     <div class="page-container">
 
+      <SectionTitle :heading="content" />
+
       <div class="about-text">
-        <h3>{{ content.title }}</h3>
-        <p class="about-text">{{ content.intro }}</p>
+     
+     
         <p class="about-text">{{ content.more }}</p>
         <hr class="m-5" />
         <h3> {{ content.subTitle }} </h3>
@@ -37,14 +39,17 @@
 
 <script setup>
 import { ref } from 'vue'
+import SectionTitle from "../shared/SectionTitle.vue"
 const content = ref(
   {
     title: 'About VueDash.org',
-    intro: "I started looking around for a Vue template that I could use for the dashboard part of a project I was working on.  I could not find anything that was simple, easy to integrate, and professional.  Suffice to say I did not find what I was looking for.",
+    intro: "I started looking around for a Vue template that I could use for the begginings of a dashboard part of a project I was working on.  I could not find anything that was simple, easy to integrate, and professional.  Suffice to say I did not find what I was looking for.",
     more: "This being the case I decided to make one, and make it available.",
     subTitle: "Use Terms",
     details: 'You are free to download this template and use it as you see fit.  I do not warranty it, do not offer free support, etc.',
   });
+
+// 
 const data = ref(
   [
     {

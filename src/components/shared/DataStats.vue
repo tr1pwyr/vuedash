@@ -8,7 +8,7 @@
 						<BIconCalendar2DateFill />{{ total }}
 					</span>
 				</transition>
-				<div class="data">The Last 30 Days</div>
+				<div class="data">Last 30 Days</div>
 			</div>
 
 			<div class="col-sm stat">
@@ -17,7 +17,7 @@
 						<BIconCalendar2EventFill />{{ totalAvg }}
 					</span>
 				</transition>
-				<div class="data">The Last 7 Days</div>
+				<div class="data">Last 7 Days</div>
 			</div>
 
 			<div class="col-sm stat">
@@ -36,10 +36,7 @@
 				<transition name="fade">
 					<span v-if="dashDate" class="dash-date">{{ dashDate }}</span>
 				</transition>
-
-				<div class="data">Enter Custom Date Range</div>
-
-
+				<div class="data">Custom Date Range</div>
 			</div>
 		</div>
 
@@ -58,7 +55,6 @@ const averageAvg = ref('')
 const dashDate = ref('')
 
 const processData = async () => {
-	console.log('processessing data...')
 	total.value = plByMonth.reduce((acc, curr) => acc + curr.pl, 0);
 	totalAvg.value = plByMonth.reduce((acc, curr) => acc + curr.avg, 0);
 	const temp = totalAvg.value / plByMonth.length;
@@ -70,7 +66,6 @@ const reProcessData = async (d) => {
 	let runningTotal = 0
 	let tempString = ""
 
-	console.log('re processessing data...')
 	total.value = Math.round(total.value * (Math.random() / 3.33));
 
 	if (d[6] > d[9]) {
@@ -81,7 +76,6 @@ const reProcessData = async (d) => {
 
 	totalAvg.value = Math.round(totalAvg.value / Math.round(((Math.random() * temp) / .33)));
 
-	console.log(temp)
 	if (Math.round(totalAvg.value + temp) > 100) {
 		let x = temp.toString()
 		runningTotal = x.slice(0, 2);
@@ -94,7 +88,6 @@ const reProcessData = async (d) => {
 
 
 const handleClick = async () => {
-
 	const { value: date } = await Swal.fire({
 		title: "select proj date",
 		input: "date",
@@ -137,13 +130,13 @@ onMounted(() => {
 	color: rgba(255, 255, 255, .75);
 }
 
-.stat:hover{
+.stat:hover {
 	color: #ffffff;
 }
 
 .stat svg {
 	color: #222222;
-	margin-right:10px;
+	margin-right: 10px;
 }
 
 .stat svg:hover {
@@ -155,7 +148,7 @@ onMounted(() => {
 }
 
 .cdr:hover {
-	color: #bd303d!important;
+	color: #bd303d !important;
 }
 
 .data {

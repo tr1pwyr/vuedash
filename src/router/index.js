@@ -28,8 +28,6 @@ const router = createRouter({
       name: "PageView",
       component: PageView,
     },
-   
-
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",

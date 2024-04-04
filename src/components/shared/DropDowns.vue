@@ -1,41 +1,47 @@
 <template>
-	<div class="drop-downs-wrapper">
+	<div id="drop-down">
+		<div id="display-time">
+			{{ displayTime }}
+		</div>
+		<div class="drop-downs-wrapper">
 
-		<section class="container drop-downs">
-			<div class="d-flex justify-content-center ">
-				<div class="drop-down-icons">
-					<BIconFire />
+			<section class="container drop-downs">
+				<div class="d-flex justify-content-center ">
+					<div class="drop-down-icons">
+						<BIconFire />
+					</div>
+					<select id="selected-tab" name="selected-tab" v-model="choice" class="form-control main">
+						<option v-for="c in choices" :key="c">{{ c }}</option>
+					</select>
+					<transition name="fade">
+						<div class="rating"> {{ rating }}% </div>
+					</transition>
 				</div>
-				<select id="selected-tab" name="selected-tab" v-model="choice" class="form-control main">
-					<option v-for="c in choices" :key="c">{{ c }}</option>
-				</select>
-				<transition name="fade">
-					<div class="rating"> {{ rating }}% </div>
-				</transition>
-			</div>
-		</section>
+			</section>
 
-		<section class="container drop-downs">
-			<div class="d-flex justify-content-start">
-				<div class="drop-down-icons">
-					<BIconShieldFillCheck />
+			<section class="container drop-downs">
+				<div class="d-flex justify-content-start">
+					<div class="drop-down-icons">
+						<BIconShieldFillCheck />
+					</div>
+					<select id="selected-tab" name="selected-tab" v-model="link" class="form-control main">
+						<option v-for="l in links" :key="l">{{ l }}</option>
+					</select>
+					<transition name="fade">
+						<div class="rating"> {{ risk }}% </div>
+					</transition>
 				</div>
-				<select id="selected-tab" name="selected-tab" v-model="link" class="form-control main">
-					<option v-for="l in links" :key="l">{{ l }}</option>
-				</select>
-				<transition name="fade">
-					<div class="rating"> {{ risk }}% </div>
-				</transition>
-			</div>
-		</section>
+			</section>
 
+		</div>
 	</div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed, onBeforeUnmount } from 'vue'
 import Swal from "sweetalert2";
 import { BIconFire, BIconShieldFillCheck } from "bootstrap-icons-vue";
+import { useInterval } from '../../js/useInterval';
 
 const choices = ['AI Automation', 'Malware', 'Threat Detection', 'Network Sec', 'IP Address Log', 'WW Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
@@ -45,6 +51,8 @@ const answer = ref('')
 const loading = ref(false)
 const rating = ref(93)
 const risk = ref(16)
+const displayTime = ref('')
+const time = ref(new Date());
 
 const updateData = async () => {
 	const n = Math.floor(Math.random() * 10)
@@ -58,24 +66,24 @@ const updateData = async () => {
 			risk.value++;
 			break;
 		case 3:
-			rating.value -= 2;
-			risk.value +=3
+			rating.value -= 4;
+			risk.value += 3
 			break;
 		case 4:
-			risk.value += 2;
-			rating.value +=3
+			risk.value -= 2;
+			rating.value += 3
 			break;
 		case 5:
-			rating.value -= 2;
-			risk.value +=4
+			rating.value -= 4;
+			risk.value += 2
 			break;
 		case 6:
 			rating.value += 3;
 			risk.value += 3;
 			break;
 		case 7:
-			rating.value -= 2;
-			risk.value -=2
+			rating.value -= 4;
+			risk.value -= 4
 			break;
 		default:
 			rating.value++;
@@ -97,15 +105,23 @@ const handleClick = async () => {
 		},
 		inputValue: 25
 	}).then(
-		console.log(input)
+
 	).catch(
-		console.log('watch fired')
 	)
+}
+
+const pulse= async => {
+	const randomNumber = Math.floor(Math.random() * 8) + 1;
+	if (randomNumber === 7) {
+		updateData();
+		console.log('The random number is 7!');
+	} else {
+		// console.log('The random number is not 7:', randomNumber);
+	}
 }
 
 watch(link, async () => {
 	try {
-		console.log('watch fired')
 		updateData();
 		// handleClick();
 		answer.value = 'yes'
@@ -118,7 +134,6 @@ watch(link, async () => {
 
 watch(choice, async () => {
 	try {
-		console.log('watch fired')
 		updateData();
 		// handleClick();
 		answer.value = 'yes'
@@ -128,15 +143,31 @@ watch(choice, async () => {
 		loading.value = false
 	}
 })
+ 
+function intervalHandler() {
+	time.value = new Date();
+	pulse();
+}
+
+useInterval(intervalHandler);
+displayTime.value = computed(() => time.value.toTimeString());
+
+onBeforeUnmount(() => {
+	displayTime.value = null
+});
 
 </script>
 
 <style scoped>
+#drop-down {}
 
-.drop-downs-wrapper{
-	margin-top: 5rem;
-	
+#display-time {
+	text-align: right;
+	margin: 3.5rem 2rem 2rem 0;
+	font-size: 13px;
+	color: #555;
 }
+
 .drop-down-icons {
 	color: #222222;
 	font-size: 2.25rem;
