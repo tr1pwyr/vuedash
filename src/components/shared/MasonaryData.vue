@@ -1,12 +1,12 @@
 <script setup>
-import { 
+import {
 	BIconCurrencyBitcoin,
 	BIconBarChartFill,
 	BIconHeartFill,
 	BIconSun,
 	BIconPieChartFill,
 	BIconCurrencyExchange
-	} from "bootstrap-icons-vue";
+} from "bootstrap-icons-vue";
 </script>
 
 <template>
@@ -57,7 +57,8 @@ import {
 					<div class="d-flex align-content-center flex-wrap">
 						<span>
 							<a href="#" class="more-dots">
-								<BIconPieChartFill /> Trump 53 Biden 45
+								<BIconPieChartFill /> 
+								Trump <span class="poll-percentage">53</span> Biden <span class="poll-percentage">45</span>
 							</a>
 							Latest Presidential Poll
 						</span>
@@ -83,14 +84,14 @@ import {
 					<div class="d-flex align-content-center flex-wrap">
 						<span>
 							<a href="#" class="more-dots">
-								<BIconCurrencyExchange /> Crypto:<span class="up" >Up</span>
+								<BIconCurrencyExchange /> Crypto:<span class="up">Up</span>
 							</a>
 							The Broader Crypto Market
 						</span>
 					</div>
 				</div>
 			</div>
-			
+
 
 		</div>
 	</div>
@@ -175,44 +176,52 @@ import {
 
 .hack:hover {
 	border: 1px solid #0177e5;
-	color: #0177e5!important;
-	background-color: #06172a!important;
+	color: #0177e5 !important;
+	background-color: #06172a !important;
 }
 
 .poll {
 	border: 1px solid #ce5353;
 	color: #ce5353;
-  background-color: rgba(45, 26, 33, .9);
+	background-color: rgba(45, 26, 33, .9);
 }
+
 .poll:hover {
 	border: 1px solid #de6767;
 	color: #e16161;
-  background-color: #25151b;
+	background-color: #25151b;
 	cursor: pointer;
 }
 
-.poll a{
+.poll a {
 	color: #f77c7c;
+}
+
+.poll-percentage{
+	color: #ffc1c1;
 }
 
 .success {
 	border: 1px solid #55a66c;
 	color: #55a66c;
-  background-color: #172925;
+	background-color: #172925;
 }
+
 .success:hover {
 	border: 1px solid #74c78b;
 	color: #73ca8b;
-  background-color: #13221e;
+	background-color: #13221e;
 }
 
-.success a{color: #b0f2c3;}
-.success a:hover{
+.success a {
+	color: #b0f2c3;
+}
+
+.success a:hover {
 	color: #fff;
 }
 
-.success .up{
+.success .up {
 	color: #73ca8b;
 }
-
 </style>

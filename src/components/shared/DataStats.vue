@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="col-sm stat">
-				<a @click="handleClick" class="cdr">
+				<a @click="handleClick">
 					<BIconCalendar2CheckFill />
 				</a>
 				<transition name="fade">
@@ -115,45 +115,60 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.stats {
+ .stats {
 	padding: 2rem;
-	margin: 0 2rem;
+	margin: 0;
 	font-weight: 700;
 	font-size: 1.75rem;
-	background-color: rgba(17, 17, 17, .5) !important;
-	border-bottom: 25px solid #111111;
+	background-color: #ffffff!important;
+	border-bottom: 25px solid #e9e9e9;
 	border-radius: .33rem;
+	
+}
+.dark .stats {
+	background-color: rgba(29, 29, 29, 0.5) !important;
+	border-bottom: 25px solid #101010;
 }
 
 .stat {
 	margin-left: 1rem;
+	color: rgba(125, 125, 125, 0.75);
+	cursor: pointer;
+}
+
+.dark .stat {
 	color: rgba(255, 255, 255, .75);
 }
 
-.stat:hover {
+.stat:hover{
+	color: #1e033a;
+}
+
+.dark .stat:hover {
 	color: #ffffff;
 }
 
-.stat svg {
+.stat svg{
+	margin-top: -3px;
+	margin-right: 7px;
+	color: rgba(125, 125, 125, 0.5);
+}
+
+.dark .stat svg {
 	color: #222222;
-	margin-right: 10px;
 }
 
 .stat svg:hover {
 	color: #726b66;
 }
 
-.cdr {
-	cursor: pointer;
-}
-
-.cdr:hover {
-	color: #bd303d !important;
-}
-
-.data {
+.data{
 	padding-top: 2px;
 	font-size: .85rem;
+	color: #1e033a;
+}
+
+.dark .data {
 	color: #bd303d;
 }
 

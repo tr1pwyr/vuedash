@@ -1,7 +1,7 @@
 <template>
-	<Responsive class="w-full">
+	<Responsive class="w-full mt-3">
 		<template #main="{ width }">
-			<Chart :size="{ width, height: 480 }" :data="data" :margin="margin" :axis="axis">
+			<Chart :size="{ width, height: 480 }" :data="data" :margin="margin" :axis="axis" class="ummm">
 				<template #layers>
 					<Grid strokeDasharray="1,1"  />
 					<Line :dataKeys="['name', 'inc']" type="monotone" :lineStyle="{ stroke: '#bd303d' }" />
@@ -49,8 +49,7 @@ export default defineComponent({
 			bottom: 50
 		})
 
-		
-
+	
 		const axis = ref({
 			primary: {
 				type: 'band',
@@ -75,11 +74,11 @@ export default defineComponent({
 <style scoped>
 .w-full {
 	width: 100%;
-	color:rgba(89, 91, 96, 0.5);
+	color:rgba(162, 167, 178, 0.5);
+	background-color:#fff;
 }
-
-svg{
-	color:#ffffff!important;
-	background-color: #111111!important;
+.dark .w-full {
+	color:rgba(89, 91, 96, 0.5);
+	background-color: #121212;
 }
 </style>

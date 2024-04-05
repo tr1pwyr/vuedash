@@ -1,24 +1,14 @@
-<style>
-.icon-label{
-
-}
-.dashboard-menu ul li:hover {
-  cursor: pointer;
-}
-</style>
 
 <template>
-
   <div id="dashboard">
-
     <section class="dashboard-menu sticky-top side-menu">
-      <div class="pt-5 d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
+      <div class="pt-4 d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
 
         <ul
           class="nav flex-sm-column flex-row flex-nowrap mx-auto text-center justify-content-between align-items-center">
           <li>
             <a @click="forceRerender" class="d-block py-2 text-decoration-none cursor-pointer" title="Reset Data">
-              <BIconExclamationOctagonFill class="bi-icon fs-2" />
+              <BIconExclamationTriangleFill class="bi-icon fs-2" />
               <div class="icon-label">Reset Data</div>
             </a>
           </li>
@@ -26,12 +16,12 @@
             <a @click="toggleSettings" class="nav-link py-3" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Home">
               <BIconGearWideConnected class="bi-icon fs-2" />
-              <div class="icon-label">Details</div>
+              <div class="icon-label details">Details</div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+            <a href="/page/charts" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Dashboard">
               <BIconGraphDown class="bi-icon fs-2" />
               <div class="icon-label">The Charts</div>
@@ -42,13 +32,13 @@
             <a href="#" class="nav-link py-3" title="" data-bs-toggle="tooltip" data-bs-placement="right"
               data-bs-original-title="Orders">
               <BIconHddNetworkFill class="bi-icon fs-2" />
-              <div class="icon-label">The Network</div>
+              <div class="icon-label details">The Network</div>
             </a>
           </li>
 
           <li>
-            <a href="/#monitoring" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-              data-bs-original-title="Orders">
+            <a href="/#monitoring" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
+              data-bs-placement="right" data-bs-original-title="Orders">
               <BIconIncognito class="bi-icon fs-2" />
               <div class="icon-label">Monitoring</div>
             </a>
@@ -56,10 +46,8 @@
 
         </ul>
         <div class="dropdown">
-          <a href="#"
-            class="d-flex align-items-center justify-content-center p-3 text-decoration-none dropdown-toggle"
+          <a href="#" class="d-flex align-items-center justify-content-center p-3 text-decoration-none dropdown-toggle"
             id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-
           </a>
         </div>
       </div>
@@ -71,17 +59,14 @@
         <DashSettings v-if="showSettings" />
       </transition>
       <DropDowns v-if="renderComponent" />
-      <LineChart/>
+      <LineChart />
       <DataStats v-if="renderComponent" />
       <TheTags />
-    
       <DataTable />
-  
-      <div id = "monitoring">
+      <div id="monitoring">
         <MasonaryData />
       </div>
-
-        <BarCharts />
+      <TwoCharts />
     </section>
 
   </div>
@@ -90,7 +75,7 @@
 
 <script setup>
 import LineChart from "../components/dashboard/LineChart.vue";
-import BarCharts from "../components/dashboard/BarCharts.vue"
+import TwoCharts from "../components/dashboard/TwoCharts.vue"
 import DataStats from "../components/shared/DataStats.vue"
 import TheTags from "../components/shared/TheTags.vue"
 import DashSettings from "../components/dashboard/DashSettings.vue"
@@ -104,7 +89,8 @@ import {
   BIconGraphDown,
   BIconHddNetworkFill,
   BIconIncognito,
-  BIconExclamationOctagonFill
+  BIconExclamationOctagonFill,
+  BIconExclamationTriangleFill
 } from "bootstrap-icons-vue";
 import { nextTick, ref } from 'vue';
 

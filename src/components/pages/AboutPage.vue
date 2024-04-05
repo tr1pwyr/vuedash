@@ -7,10 +7,11 @@
       <div class="about-text">
      
      
-        <p class="about-text">{{ content.more }}</p>
-        <hr class="m-5" />
+        <p class="about-text text-center ">{{ content.more }}</p>
+        <hr class="m-5" id="download"/>
         <h3> {{ content.subTitle }} </h3>
         <p class="text">{{ content.details }}</p>
+        <p class="download-link"><a href="https://github.com/tr1pwyr/vuedash">Download This Dashboard</a></p>
 
         <div class="blockquote-wrapper">
           <div class="blockquote">
@@ -35,11 +36,18 @@
     </div>
 
   </section>
+
+  <PhotoGallery />
+
+
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import SectionTitle from "../shared/SectionTitle.vue"
+import PhotoGallery from "../shared/PhotoGallery.vue"
+
+
 const content = ref(
   {
     title: 'About VueDash.org',
@@ -76,6 +84,10 @@ const data = ref(
 </script>
 
 <style scoped>
+.download-link{
+  font-weight: 800;
+  font-size: 1.5rem;
+}
 h4 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;

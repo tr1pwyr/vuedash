@@ -142,7 +142,7 @@ const hotLinks = ref([
     id: "17",
   },
   {
-    title: "Persoanl Privacy",
+    title: "Personal Privacy",
     link: "https://hackguardia/article/privacy",
     id: "18",
   },

@@ -1,8 +1,10 @@
 <template>
 	<div id="drop-down">
-		<div id="display-time">
-			{{ displayTime }}
-		</div>
+		
+		<!-- This is the "clock", but really it's an example of using the useInterval -->
+		
+		<div id="display-time">{{ displayTime }}</div>
+
 		<div class="drop-downs-wrapper">
 
 			<section class="container drop-downs">

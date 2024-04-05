@@ -55,7 +55,7 @@ const goTo = () => {
       </p>
 <!-- 
       <h2 class="title">
-        HackGuardia Client {{ props?.authName || "Authentication" }}
+        {{ props?.authName || "Authentication" }}
       </h2> -->
 
       <div class="input-group" v-if="props?.authName == 'register'">
@@ -75,7 +75,7 @@ const goTo = () => {
             autocomplete="email" :class="{ inpError: emailError }" />
         </div>
 
-        <div class="input-group">
+        <div class="input-group mx-1 ">
           <label for="password" class="input-label">Password
             <span v-show="passwordError" :class="{ error: passwordError }">
               {{ passwordErrorMessge ? passwordErrorMessge : "required" }}
@@ -86,13 +86,16 @@ const goTo = () => {
           <span class="password-toggle" @click="showPassword = !showPassword">
             <BIconEye />
           </span>
-
         </div>
 
+  
+
       </div>
-      <button type="submit" class="btn btn-primary">
-        {{ props.authName == 'register' ? 'Register' : 'Client Login' }}
+
+      <button type="submit" class="btn btn-primary mt-1">
+        {{ props.authName == 'register' ? 'Register' : 'Login' }}
       </button>
+
     </form>
   </div>
 </template>
@@ -158,7 +161,7 @@ const goTo = () => {
 
 .input-label {
   font-size: 16px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 
 .input-field {
@@ -183,7 +186,7 @@ const goTo = () => {
 }
 
 .auth-link a {
-  color: #fc6220;
+  color: #6ab5db;
   text-decoration: none;
 }
 
@@ -194,7 +197,7 @@ const goTo = () => {
 
 .error {
   position: absolute;
-  color: #fc6220;
+  color: #6ab5db;
   top: 0;
   top: 0;
   right: 10px;
@@ -204,7 +207,7 @@ const goTo = () => {
 
 .Gerror {
   position: absolute;
-  color: #fc6220;
+  color: #6ab5db;
   margin: 0;
   top: 5px;
   right: 5px;
@@ -212,6 +215,6 @@ const goTo = () => {
 }
 
 .inpError {
-  border: 1px solid #fc6220;
+  border: 1px solid #6ab5db;
 }
 </style>
