@@ -2132,20 +2132,39 @@ progress {
 }
 
 .table {
-  --bs-table-color: #b3b3b3;
-  --bs-table-bg: rgba(17, 17, 17, .5);
+  --bs-table-color: #4f4f4f;
+  --bs-table-bg: rgba(235, 235, 235, 0.5);
   --bs-table-border-color: transparent;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: #b3b3b3;
-  --bs-table-striped-bg: #101010;
+  --bs-table-striped-bg: #ffffff;
   --bs-table-active-color: #b3b3b3;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: #b3b3b3;
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
-  color: var(--bs-table-color);
+  color: #1e033a;
   vertical-align: top;
+
+}
+
+.table a {
+  color: #1e033a;
+}
+
+.dark .table a{color:#6ab5db;}
+
+.dark .table {
+  --bs-table-color: #b3b3b3;
+  --bs-table-bg: rgba(17, 17, 17, .5);
+  --bs-table-striped-color: #b3b3b3;
+  --bs-table-striped-bg: #101010;
+  --bs-table-active-color: #b3b3b3;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #b3b3b3;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
 }
 
@@ -2196,6 +2215,19 @@ progress {
 .table-striped>tbody>tr:nth-of-type(odd)>* {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
+  border-bottom: 1px solid #d6d6d6!important;
+  border-top: 1px solid #d6d6d6!important;
+  border-left: none;
+  border-right: none;
+}
+
+.dark .table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: var(--bs-table-striped-color);
+  border-bottom: 1px solid #000!important;
+  border-top: 1px solid #000!important;
+  border-left: none;
+  border-right: none;
 }
 
 .table-striped-columns> :not(caption)>tr> :nth-child(even) {
@@ -11366,9 +11398,15 @@ output{
   margin-top: 2px;
   border-radius: .3rem;
   font-size: .9rem;
-  background-color: #1e033a;
-  color: #fff;
+  background-color: #ffffff;
+  color: #1e033a;
   padding: 3px 5px;
+  font-weight: 700;
+}
+
+.icon-label:hover{
+  color: #ffffff;
+  background-color: #1e033a;
 }
 
 .dark .icon-label {
@@ -11376,13 +11414,18 @@ output{
   border-radius: .3rem;
   font-size: .9rem;
   background-color: #222;
-  color: #ccc;
-
+  color: #7d7d7d;
 }
 
-.bi-icon:hover  {color: #cccccc;}
-.dark .bi-icon {color: #222222;}
+.dark .icon-label:hover {
+  color:#fff;
+}
+
 .bi-icon {color: rgba(123, 123, 123, 0.33);}
+.bi-icon:hover  {color: #7d7d7d;}
+
+
+.dark .bi-icon {color: #222222;}
 .dark .bi-icon:hover {color: rgba(255, 255, 255, .33);}
 
 p.text {color: #ffffff;}

@@ -61,7 +61,7 @@ export const data = [
   },
   {
     rank: 7,
-    img: '/images/icons/cloud.webp',
+    img: '/images/icons/data-transfer.webp',
     name: 'Cloud Services',
     symbol: 'CS',
     rating: '75',
@@ -92,7 +92,7 @@ export const data = [
   {
     rank: 10,
     img: '/images/icons/world.webp',
-    name: 'World WIde Threats',
+    name: 'World Wide Threats',
     symbol: 'WW',
     rating: '62',
     change: '+1.23%',

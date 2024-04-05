@@ -45,7 +45,7 @@ import Swal from "sweetalert2";
 import { BIconFire, BIconShieldFillCheck } from "bootstrap-icons-vue";
 import { useInterval } from '../../js/useInterval';
 
-const choices = ['AI Automation', 'Malware', 'Threat Detection', 'Network Sec', 'IP Address Log', 'WW Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
+const choices = ['VueDash.org', 'AI Automation', 'Malware', 'Threat Detection', 'Network Sec', 'IP Address Log', 'WW Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
 const links = ['Reset Logs', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'WW Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const link = ref(links[0]);
@@ -165,20 +165,24 @@ onBeforeUnmount(() => {
 
 #display-time {
 	text-align: right;
-	margin: 3.5rem 2rem 2rem 0;
+	margin: 3.5rem 2.5rem 2rem 0;
 	font-size: 13px;
 	color: #555;
 }
 
 .drop-down-icons {
-	color: #222222;
+	color: #CCCCCC;
 	font-size: 2.25rem;
 	margin-right: 5px;
-	margin-top: -2px;
+	margin-top: -4px;
+}
+
+.dark .drop-down-icons {
+	color: #222222;
 }
 
 .rating {
-	color: #222222;
+	color: #CCCCCC;
 	font-size: 2.25rem;
 	margin-left: 5px;
 	margin-top: -2px;
@@ -186,14 +190,30 @@ onBeforeUnmount(() => {
 	letter-spacing: -.1rem;
 }
 
+.dark .rating {
+	color: #222222;
+}
+
 #selected-tab {
 	max-width: 320px;
+	background-color: #FFFFFF;
+	border: 2px solid #cccccc50;
+	color: #1e033a80!important;
+}
+
+#selected-tab:hover {
+	background-color: #FFFFFF !important;
+	color: #1e033a80!important;
+	border: 2px solid #1e033a50!important;
+}
+
+.dark #selected-tab {
 	background-color: #151515;
 	border: 2px solid #2c2c2c;
 	color: #dae0e77d !important;
 }
 
-#selected-tab:hover {
+.dark #selected-tab:hover {
 	background-color: #101010 !important;
 	color: #dae0e7 !important;
 	border: 2px solid rgba(255, 255, 255, .25);

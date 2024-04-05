@@ -3,7 +3,7 @@
 		<div class="position-relative">
 		
 			<div class="table-responsive m-5">
-				<div class="d-md-flex text-center align-items-center justify-content-between">
+				<div class="d-md-flex text-center align-items-center justify-content-between pt-2 pb-3">
 					<h6 class="link-symbol" >Latest Incidents</h6>
 					<a class="link-symbol" href="/#what">Reset Log Files?</a>
 				</div>
@@ -68,11 +68,17 @@ import { data } from '../../js/leaderBoardData.js'
 	height: 32px;
 	widows: 32px;
 	margin-right: 5px;
-	opacity: 0.5;
+
 }
 
-.incident-table  .table-responsive{
-	background-color:rgba(17, 17, 17, .5);
+.incident-table .table-responsive{
+	background-color:#fff;
+	border-radius: .5rem;
+	padding: 1rem 1rem 0 0;
+}
+
+.dark .incident-table .table-responsive{
+	background-color:#0e0e0e;
 	border-radius: .5rem;
 	padding: 1rem 1rem 0 0;
 }
@@ -83,6 +89,7 @@ import { data } from '../../js/leaderBoardData.js'
 
 .link-symbol{
 	padding-left: 2px;
+	padding-right: 5px;
 	font-size: .9rem;
 	vertical-align: super;
 	font-weight: 800;
@@ -91,11 +98,9 @@ h6{
 	margin-left: .5rem;
 }
 
-.red-text{
-	color:#b4483d;
-}
+.red-text{color: #e60000;}
+.green-text{color: #1b3cd1;}
+.dark .red-text{color:#b4483d;}
+.dark .green-text{color: #73ca8b;}
 
-.green-text{
-	color: #73ca8b;
-}
 </style>

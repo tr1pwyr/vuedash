@@ -2,7 +2,7 @@
   <header class="main-header sticky">
     <nav class="navbar">
       <div class="brand">
-        <a class="" href="/"><BIconReception3 class="b-icon" />VueDash.org</a>
+        <a class="" href="/"><BIconReception3 class="brand-icon" />VueDash.org</a>
       </div>
       <!-- <div class="help-button">
         <a @click="handleClick()" class="btn btn-primary">
@@ -78,6 +78,13 @@ import {
   background-repeat: no-repeat;
 }
 
+.dark .brand:hover{
+  background-image: linear-gradient(to bottom left, transparent 50%, #1e033a 50%), linear-gradient(#1e033a, #1e033a), linear-gradient(#1e033a, #1e033a);
+  background-size: 25px 25px, 100% 100%, 100% 100%;
+  background-position: 100% 0%, -25px 0%, 100% 25px;
+  background-repeat: no-repeat;
+}
+
 .brand a {
   color: rgba(254, 254, 254, .99) !important;
   font-weight: 900;
@@ -90,6 +97,7 @@ import {
 dark .brand a {color: rgba(254, 254, 254, .66) !important;}
 
 .brand a:hover {color: #fff !important;}
+.brand-icon{margin-top:-5px;}
 
 
 #flexSwitchCheckDefault {

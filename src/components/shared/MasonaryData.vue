@@ -123,28 +123,26 @@ import {
 }
 
 .bitcoin {
+	border: 1px solid #1e033a;
+	background-color:  #1e033a;
+}
+.bitcoin a, .bitcoin{	color: #ffde89 } 
+
+.dark .bitcoin {
 	border: 1px solid #f4c022;
 	color: #f4c022;
 	background-color: rgba(52, 46, 24, .8);
 }
 
-.bitcoin:hover {
+.dark .bitcoin:hover {
 	border: 1px solid #fdcd3c;
 	color: #fccb3a;
 	background-color: #373119;
 }
 
-.bitcoin a {
-	color: #fccb3a;
-}
-
-.bitcoin:hover a {
-	color: #fff;
-}
-
-.bitcoin .btc {
-	color: #ffe7a0;
-}
+.dark .bitcoin a {color: #fccb3a;}
+.dark .bitcoin:hover a {color: #fff;}
+.dark .bitcoin .btc {color: #ffe7a0;}
 
 .vue {
 	border: 1px solid #2c96c3;
