@@ -4,11 +4,7 @@
       <div class="brand">
         <a class="" href="/"><BIconReception3 class="brand-icon" />VueDash.org</a>
       </div>
-      <!-- <div class="help-button">
-        <a @click="handleClick()" class="btn btn-primary">
-        <BIconGithub class="b-icon" /> Download Dashboard
-        </a>
-      </div> -->
+
       <div class="form-check form-switch">
         <input @click="toggleDark()" class="form-check-input" type="checkbox" role="switch"
           id="flexSwitchCheckDefault">
@@ -18,17 +14,10 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
 import { useDark, useToggle } from "@vueuse/core";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const router = useRouter();
-const handleClick = () => {
-  router.push("/page/about/#download")
-}
-import { 
-	BIconGithub, BIconReception3
-	} from "bootstrap-icons-vue";
+import { BIconReception3 } from "bootstrap-icons-vue";
 </script>
 
 <style>
@@ -95,7 +84,6 @@ import {
 }
 
 dark .brand a {color: rgba(254, 254, 254, .66) !important;}
-
 .brand a:hover {color: #fff !important;}
 .brand-icon{margin-top:-5px;}
 

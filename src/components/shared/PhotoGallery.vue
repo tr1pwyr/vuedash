@@ -31,6 +31,9 @@ import { imgs } from "../../js/imgs"
 }
 #photo-gallery h5 {
 	font-weight: 800;
-	color: rgba(242, 242, 242, .75);
+	color: rgba(1,1,1, .5);
+}
+.dark #photo-gallery h5 {
+	color: rgba(242, 242, 242, .2);
 }
 </style>

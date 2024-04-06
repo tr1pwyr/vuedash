@@ -4,7 +4,7 @@
 		
 			<div class="table-responsive mx-5">
 				<div class="d-md-flex text-center align-items-center justify-content-between pt-2 pb-3">
-					<h6 class="link-symbol" >Latest Incidents</h6>
+					<h6 class="link-symbol"> Latest Incidents</h6>
 					<a class="link-symbol" href="/#what">Reset Log Files?</a>
 				</div>
 				<table class="table table-striped text-nowrap text-center text-lg-start">
@@ -13,7 +13,7 @@
 							<th>#</th>
 							<th>Name</th>
 							<th>Rating</th>
-							<th>Trend</th>
+							<th>Change</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -26,7 +26,7 @@
 										<img :src="link.img" :alt="link.name" class="incident-table-image">
 									</div>
 									<h6 class="link-url mb-0">
-										<a :href="link.link" class="gray-link text-decoration-none">
+										<a :href="link.link" class="table-link text-decoration-none">
 											{{ link.name }}
 										</a>
 										<span class="link-symbol">
@@ -62,7 +62,19 @@ import { data } from '../../js/leaderBoardData.js'
 </script>
 
 <style scoped>
+.table-link{
+	padding: 3px 6px;
+}
 
+a.table-link:hover {
+  color: #fff;
+  background-color: #1e033a;
+  border-radius: .3rem;
+}
+
+.dark a.table-link:hover {
+  background-color: #bd303d;
+}
 
 .incident-table-image{
 	height: 32px;
@@ -88,7 +100,7 @@ import { data } from '../../js/leaderBoardData.js'
 }
 
 .link-symbol{
-	padding-left: 2px;
+	padding-left: 5px;
 	padding-right: 5px;
 	font-size: .9rem;
 	vertical-align: super;

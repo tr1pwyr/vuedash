@@ -11,23 +11,23 @@ export const data = [
   },
   {
     rank: 2,
-    img: '/images/icons/virus.webp',
-    name: 'Malware',
-    symbol: 'MW',
+    img: '/images/icons/data-transfer.webp',
+    name: 'BackBlaze',
+    symbol: 'BB',
     rating: '97',
     change: '+1.69%',
-    action: 'Scan',
-    link: '/article/ransomware'
+    action: 'Storage',
+    link: 'https://www.backblaze.com/'
   },
   {
     rank: 3,
     img: '/images/icons/firewall.webp',
-    name: 'Threats Detected',
-    symbol: 'X',
+    name: 'Virtual Private Network',
+    symbol: 'VPN',
     rating: '92',
     change: '-3.96%',
-    action: 'Alert',
-    link: 'https://x.com/Tr1pwyr'
+    action: 'Software',
+    link: 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=93756&url_id=902 '
   },
   {
     rank: 4,
@@ -52,12 +52,12 @@ export const data = [
   {
     rank: 6,
     img: '/images/icons/globe.webp',
-    name: 'World Wide Threats',
-    symbol: 'WW',
+    name: 'Private Messge',
+    symbol: 'PM',
     rating: '76',
     change: '+2.42%',
     action: 'Monitor',
-    link: '/topic/threat'
+    link: 'https://priv-mssg.com'
   },
   {
     rank: 7,

@@ -1,49 +1,70 @@
+<style>
+	#dashboard-details{
+		margin: 1rem 0 -2rem 1rem;
+	}
+	.twitter{
+		background-color: #1b3cd1;
+	}
+	.dark .twitter{
+		background-color: #6ab5db;
+	}
+</style>
+
 <template>
-	<div class="container mt-4" id="dashboard-details">
-		<div class="row d-flex justify-content-center align-items-center">
+	<div class="container" id="dashboard-details">
+		<div class="row d-flex justify-content-center align-items-center pt-5">
 
-			<div class="col pt-5">
-				<div class="card mb-5" style="border-radius: 15px;">
-					<div class="card-body p-4">
+			<div class="col">
+				<div class="card card-body py-3">
 
-						<h3 class="mb-3">Dashboard Details</h3>
-						<p class="small mb-0"><i class="far fa-star fa-lg"></i>
-							<span class="mr-2">|</span> Created by
-							<strong> <a href="https://twitter.com/tr1pwyr">Tr1pwyr</a> </strong> on March 24 2024
-						</p>
-						<hr class="my-4">
+					<h3 class="mb-2">Dashboard Details</h3>
+					<p class="small mb-0"><BIconStarFill />
+						<span class="mx-2">|</span>Created by
+						<strong> <a href="https://twitter.com/tr1pwyr">Tr1pwyr</a> </strong> on March 24 2024
+					</p>
+					<hr class="my-4">
 					<div class="d-flex justify-content-start align-items-center">
-						<p class="mb-0"><i class="fas fa-cog me-2"></i> <span class="text-muted small">settings</span></p>
-						<p class="mb-0"><i class="fas fa-link ms-4 me-2"></i> <span class="text-muted small">link</span></p>
-						<p class="mb-0"><i class="fas fa-ellipsis-h ms-4 me-2"></i> <span class="text-muted small">program</span>
-							<span class="ms-3 me-4">|</span>
-						</p>
+						<p class="mb-0"><BIconPatchExclamationFill/> <span class="text-muted small">settings </span> </p>
+						<span class="ms-3 me-4">|</span>
+						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small"> link</span></p>
+						<p class="mb-0"><span class="ms-3 me-4">|</span></p>
 						<a href="#!">
 							<img src="/images/icons/virus.webp" alt="avatar" class="img-fluid rounded-circle me-3" width="30">
 						</a>
-						<button type="button" class="btn btn-outline-dark btn-sm btn-floating">
-							<i class="fas fa-plus"></i>
+						<button type="button" class="btn btn-primary btn-sm btn-floating">
+							<BIconLightningFill /> Attention
 						</button>
 					</div>
 
-					<hr class="my-5">
+					<hr class="my-3">
 					<div class="d-flex justify-content-start align-items-center">
-						<p class="mb-0 "><i class="fas fa-cog me-2"></i> <span class="text-muted small">settings</span></p>
-						<p class="mb-0 "><i class="fas fa-link ms-4 me-2"></i> <span class="text-muted small">link</span></p>
-						<p class="mb-0 "><i class="fas fa-ellipsis-h ms-4 me-2"></i> <span class="text-muted small">program</span>
-							<span class="ms-3 me-4">|</span>
-						</p>
+						<p class="mb-0"><BIconPatchPlusFill /> <span class="text-muted small">updates</span> </p>
+						<span class="ms-3 me-4">|</span>
+						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small"> link</span></p>
+						<p class="mb-0"><span class="ms-3 me-4">|</span></p>
+						<a href="#!">
+							<img src="/images/icons/network.webp" alt="avatar" class="img-fluid rounded-circle me-3" width="30">
+						</a>
+						<button type="button" class="btn btn-secondary btn-sm btn-floating">
+							<BIconCheckLg /> All Good
+						</button>
+					</div>
+
+					<hr class="my-3">
+					<div class="d-flex justify-content-start align-items-center">
+						<p class="mb-0"><BIconPatchQuestionFill /> <span class="text-muted small">re-setup </span> </p>
+						<span class="ms-3 me-4">|</span>
+						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small"> link</span></p>
+						<p class="mb-0"><span class="ms-3 me-4">|</span></p>
 						<a href="#!">
 							<img src="/images/icons/firewall.webp" alt="avatar" class="img-fluid rounded-circle me-3" width="30">
 						</a>
-						<button type="button" class="btn btn-outline-dark btn-sm btn-floating">
-							<i class="fas fa-plus"></i>
+						<button type="button" class="btn btn-secondary btn-sm btn-floating">
+							<BIconCheckLg /> All Good
 						</button>
-
-
 					</div>
 
-					</div>
+
 				</div>
 
 
@@ -65,7 +86,7 @@
 							<button type="button" class="btn btn-secondary btn-floating">
 								<BIconGithub />
 							</button>
-							<button type="button" class="btn btn-secondary btn-floating">
+							<button type="button" class="btn btn-secondary btn-floating twitter">
 								<BIconTwitterX />
 							</button>
 							<button type="button" class="btn btn-secondary btn-floating">
@@ -92,14 +113,14 @@
 
 			</div>
 
-
 		</div>
 	</div>
 </template>
 
 <script setup>
 import {
-	BIconVirus, BIconGithub, BIconTwitterX
+	BIconVirus, BIconGithub, BIconTwitterX, BIconStarFill, BIconPatchPlusFill, 
+	BIconLink, BIconLightningFill, BIconCheckLg,  BIconPatchExclamationFill,  BIconPatchQuestionFill
 } from "bootstrap-icons-vue";
 
 </script>

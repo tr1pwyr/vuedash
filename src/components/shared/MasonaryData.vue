@@ -10,8 +10,8 @@ import {
 </script>
 
 <template>
-	<div class="container mt-5">
-		<div class="row mx-4">
+	<div class="container my-2">
+		<div class="row">
 
 			<div class="col-md-4 mb-4">
 				<div class="card card-body h-100 hack">
@@ -120,6 +120,11 @@ import {
 
 .card {
 	margin-bottom: .75rem;
+	cursor: pointer;
+}
+
+.card a {
+	text-decoration: none;
 }
 
 .bitcoin {border: 1px solid #1e033a;	background-color: #1e033a;}
@@ -158,12 +163,12 @@ import {
 .dark .success {border: 1px solid #2c96c3; color: #2c96c3; background-color: #102635;}
 .dark .success:hover {border: 1px solid #49add8; color: #3caddd; background-color: #0d202c;}
 
-
-.dark .vue a, .hack a {color: }
+.dark .vue a {color:rgba(255, 255, 255, .25);}
+.hack a {color: #627ef9; }
 .dark .vue:hover a, .hack:hover a {color: #fff;}
 
-.hack { border: 1px solid #1b3cd1; color: #ffffff; background-color: #1b3cd1; font-weight: 700; }
-.attack:hover { border: 1px solid #1e033a; color: #ffde89; background-color: #1e033a; }
+.hack { border: 1px solid #1b3cd1; color: #ffffff!important; background-color: #1b3cd1; font-weight: 700; }
+.hack:hover {border: 1px solid #2194ff; color: #1a90ff !important; background-color: #031070 !important;}
 
 .dark .hack {border: 1px solid #0171d9; color: #0171d9 !important; background-color: rgb(8, 31, 57, .9); }
 .dark .hack:hover {border: 1px solid #0177e5; color: #0177e5 !important; background-color: #06172a !important;}
@@ -172,12 +177,12 @@ import {
 	border: 1px solid #e60000;
 	color: #FFFFFF;
   background-color: #e60000;
-	cursor: pointer;
 }
 
-.poll:hover {
+.poll:hover, .bitcoin:hover {
 	border: 1px solid #f91880;
 	background-color: #f91880;
+	color:#ffffff;
 }
 
 .dark .poll {
@@ -193,6 +198,7 @@ import {
 }
 
 .poll a {color: #ffffff;}
+.dark .poll a:hover {color: #de6767;}
 .poll-percentage {color: #ffc1c1;}
 
 

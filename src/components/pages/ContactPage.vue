@@ -5,9 +5,8 @@
       <div class="row">
         <h3>Contact VueDash.org</h3>
         <p>
-          Feel free to reach out to us with any questions, comments, or concerns.
-          If you had trouble signing up, logging in, or submitting an article, or you are interested in joining the tech
-          team, just fill out the short form below and we will get back to you as soon as possible.
+          Feel free to reach out with any questions, comments, or concerns.
+          If you want to hire me for customization of this theme, consulting on how to get your api working with it, etc. you can mssg 850.270.3180 and I'll get back to you within 24 hours. A $50 deposit of ETH @ 0xef83ee26838B306aE2cDDE9eC8eEa38D15B41C2F get you on the schedule and buys you an hour of consulting.
         </p>
       </div>
     </div>
@@ -62,11 +61,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+  padding: 0 50px;
   margin: 0 0 50px 0;
-  /* background-color: white; */
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1) !important;
   position: relative;
 
 }

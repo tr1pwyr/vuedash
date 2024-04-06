@@ -5,7 +5,7 @@
 		
 		<div id="display-time">{{ displayTime }}</div>
 
-		<div class="drop-downs-wrapper">
+		<div class="d-flex justify-content-between">
 
 			<section class="container drop-downs">
 				<div class="d-flex justify-content-center ">
@@ -161,7 +161,13 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-#drop-down {}
+
+#drop-down{
+}
+
+.drop-downs{
+	margin: none!important;
+}
 
 #display-time {
 	text-align: right;
