@@ -41,7 +41,7 @@ import {
   left: 0;
   z-index: 99;
   width: 100%;
-  background: #fff!important;
+  background: rgba(255, 255, 255, .9)!important;
   box-shadow: -1px 14px 14px -11px rgba(0,0,0,0.1)!important;
   -webkit-box-shadow: -1px 14px 14px -11px rgba(0,0,0,0.1)!important;
   -moz-box-shadow: -1px 14px 14px -11px rgba(0,0,0,0.1)!important;

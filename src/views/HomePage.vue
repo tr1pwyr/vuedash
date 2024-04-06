@@ -59,13 +59,14 @@
         <DashSettings v-if="showSettings" />
       </transition>
       <DropDowns v-if="renderComponent" />
-      <LineChart />
-      <DataStats v-if="renderComponent" />
-      <TheTags />
-      <DataTable />
-      <div id="monitoring">
+       <div id="monitoring">
         <MasonaryData />
       </div>
+      <DataTable />
+      <TheTags />
+      <DataStats v-if="renderComponent" />
+      <LineChart />
+
       <TwoCharts />
     </section>
 

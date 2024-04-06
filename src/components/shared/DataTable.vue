@@ -2,7 +2,7 @@
 	<section class="incident-table" id="incident-table">
 		<div class="position-relative">
 		
-			<div class="table-responsive m-5">
+			<div class="table-responsive mx-5">
 				<div class="d-md-flex text-center align-items-center justify-content-between pt-2 pb-3">
 					<h6 class="link-symbol" >Latest Incidents</h6>
 					<a class="link-symbol" href="/#what">Reset Log Files?</a>
@@ -78,7 +78,7 @@ import { data } from '../../js/leaderBoardData.js'
 }
 
 .dark .incident-table .table-responsive{
-	background-color:#0e0e0e;
+	background-color:#060606;
 	border-radius: .5rem;
 	padding: 1rem 1rem 0 0;
 }
