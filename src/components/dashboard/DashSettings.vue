@@ -1,13 +1,9 @@
 <style>
-	#dashboard-details{
-		margin: 1rem 0 -2rem 1rem;
-	}
-	.twitter{
-		background-color: #1b3cd1;
-	}
-	.dark .twitter{
-		background-color: #6ab5db;
-	}
+	#dashboard-details{ margin: 1rem 0 -2rem 1rem; }
+	.twitter{ background-color: #1b3cd1; }
+	.dark .twitter{ background-color: #6ab5db;}
+	.link{color:#1b3cd1!important;}
+	.dark .link{color: #6ab5db!important;}
 </style>
 
 <template>
@@ -26,7 +22,7 @@
 					<div class="d-flex justify-content-start align-items-center">
 						<p class="mb-0"><BIconPatchExclamationFill/> <span class="text-muted small">settings </span> </p>
 						<span class="ms-3 me-4">|</span>
-						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small"> link</span></p>
+						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small link"> link</span></p>
 						<p class="mb-0"><span class="ms-3 me-4">|</span></p>
 						<a href="#!">
 							<img src="/images/icons/virus.webp" alt="avatar" class="img-fluid rounded-circle me-3" width="30">
@@ -40,7 +36,7 @@
 					<div class="d-flex justify-content-start align-items-center">
 						<p class="mb-0"><BIconPatchPlusFill /> <span class="text-muted small">updates</span> </p>
 						<span class="ms-3 me-4">|</span>
-						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small"> link</span></p>
+						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small link"> link</span></p>
 						<p class="mb-0"><span class="ms-3 me-4">|</span></p>
 						<a href="#!">
 							<img src="/images/icons/network.webp" alt="avatar" class="img-fluid rounded-circle me-3" width="30">
@@ -54,7 +50,7 @@
 					<div class="d-flex justify-content-start align-items-center">
 						<p class="mb-0"><BIconPatchQuestionFill /> <span class="text-muted small">re-setup </span> </p>
 						<span class="ms-3 me-4">|</span>
-						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small"> link</span></p>
+						<p class="mb-0">&nbsp;<BIconLink /> <span class="text-muted small link"> link</span></p>
 						<p class="mb-0"><span class="ms-3 me-4">|</span></p>
 						<a href="#!">
 							<img src="/images/icons/firewall.webp" alt="avatar" class="img-fluid rounded-circle me-3" width="30">

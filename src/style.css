@@ -4773,7 +4773,7 @@ fieldset:disabled .btn {
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
-  --bs-card-color: ;
+  --bs-card-color: #ccc;
   /* --bs-card-bg: rgba(21, 24, 26, 0.5) !important; */
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
@@ -4791,6 +4791,7 @@ fieldset:disabled .btn {
 
 .dark .card{
   background-color: rgba(0, 0, 0, .25);
+  color: #525252;
 }
 
 .card>hr {
@@ -7896,6 +7897,10 @@ fieldset:disabled .btn {
 .text-muted {
   --bs-text-opacity: 1;
   color: #665f69 !important;
+}
+
+.dark .text-muted {
+  color: #3d3d3d!important;
 }
 
 .text-black-50 {

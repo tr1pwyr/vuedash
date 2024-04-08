@@ -37,15 +37,15 @@
 							</td>
 							<td>{{ link.rating }}</td>
 							<td :class="{
-							'green-text': link.change.startsWith('+'),
-							'red-text': link.change.startsWith('-')
-						}">
+								'green-text': link.change.startsWith('+'),
+								'red-text': link.change.startsWith('-')
+							}">
 								{{ link.change }}
 							</td>
 							<td :class="{
-							'green-text': link.action === 'Buy',
-							'red-text': link.action !== 'Buy'
-						}">
+								'green-text': link.action === 'Buy',
+								'red-text': link.action !== 'Buy'
+							}">
 								{{ link.action }}
 							</td>
 						</tr>
@@ -80,7 +80,6 @@ a.table-link:hover {
 	height: 32px;
 	widows: 32px;
 	margin-right: 5px;
-
 }
 
 .incident-table .table-responsive{

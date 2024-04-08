@@ -49,14 +49,15 @@ const goTo = () => {
 </script>
 <template>
   <div class="container my-5 pt-5">
+
     <form class="form my-5" @submit.prevent="handleAuth" @click="hideAllErrors">
       <p :class="{ Gerror: hasErrorOccured }" v-show="hasErrorOccured">
         {{ errorMessage }}
       </p>
-<!-- 
+
       <h2 class="title">
         {{ props?.authName || "Authentication" }}
-      </h2> -->
+      </h2>
 
       <div class="input-group" v-if="props?.authName == 'register'">
         <label for="username" class="input-label">Username
@@ -66,16 +67,14 @@ const goTo = () => {
       </div>
 
 
-      <div class="email-password">
-
-        <div class="input-group">
-          <label for="email" class="input-label">Email
-            <span v-show="emailError" :class="{ error: emailError }">required</span></label>
-          <input type="email" id="email" name="email" v-model="user.email" class="form-control input-field"
-            autocomplete="email" :class="{ inpError: emailError }" />
+      <div class="input-group ">
+        <label for="email" class="input-label">Email
+          <span v-show="emailError" :class="{ error: emailError }">required</span></label>
+        <input type="email" id="email" name="email" v-model="user.email" class="form-control input-field"
+          autocomplete="email" :class="{ inpError: emailError }" />
         </div>
 
-        <div class="input-group mx-1 ">
+        <div class="input-group">
           <label for="password" class="input-label">Password
             <span v-show="passwordError" :class="{ error: passwordError }">
               {{ passwordErrorMessge ? passwordErrorMessge : "required" }}
@@ -88,15 +87,16 @@ const goTo = () => {
           </span>
         </div>
 
-  
+        <button type="submit" class="btn btn-primary mt-4">
+          {{ props.authName == 'register' ? 'Register' : 'Login' }}
+        </button>
 
-      </div>
-
-      <button type="submit" class="btn btn-primary mt-1">
-        {{ props.authName == 'register' ? 'Register' : 'Login' }}
-      </button>
+        <div class="input-group mt-5" v-if="props?.authName == 'login'">
+          Already have an account?  <a href="/register" class="login"> Click to here login.</a>
+        </div>
 
     </form>
+
   </div>
 </template>
 
@@ -115,10 +115,9 @@ const goTo = () => {
 }
 
 
-.email-password {
-  display: flex;
-  align-items: center;
-  position: relative;
+.login{
+  color: #e60000;
+  padding-left: 10px;
 }
 
 .title {
@@ -144,7 +143,7 @@ const goTo = () => {
 
 .dark .form-control {
   background-color: #151416;
-  color: #fefefe;
+  color: #fefefe!important;
   border: 2px solid rgba(0, 0, 0, 0.33);
 }
 

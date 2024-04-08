@@ -111,11 +111,11 @@ const tags = [
 </script>
 
 <template>
-	<section class="container mt-4">
+	<section class="container my-4">
 		<ul class="tags">
 			<a :href="tag.link" v-for="tag in tags" :key="tag.id">
 			<li :class="tag.cat" class="tag" >
-					{{ tag.name }}({{ tag.count }})
+				{{ tag.name }}({{ tag.count }})
 			</li>
 		</a>
 		</ul>
@@ -137,7 +137,7 @@ li.tag {
 }
 
 .tags{
-	margin: 1rem 0 0 1rem;
+	margin: 2rem 0 2rem 1rem;
 }
 
 .tag{
