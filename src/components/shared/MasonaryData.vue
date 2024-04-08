@@ -5,24 +5,24 @@ import {
 	BIconSun, BIconPieChartFill, BIconCurrencyExchange
 } from "bootstrap-icons-vue";
 
-const fetchData = ref(null);
+const fetchBTCPrice = ref(null);
 const apiUrl = 'https://api.coindesk.com/v1/bpi/currentprice/USD.json';
 
 onMounted(async () => {
-  try {
-    const response = await fetch(apiUrl);
-    if (response.ok) {
-      // Parse response as JSON
-      const data = await response.json();
-      // Update the fetched data
-      fetchData.value = data;
-			console.log(typeof(fetchData))
-    } else {
-      console.error('Failed to fetch data:', response.statusText);
-    }
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
+	try {
+		const response = await fetch(apiUrl);
+		if (response.ok) {
+			// Parse response as JSON
+			const data = await response.json();
+			// Update the fetched data
+			fetchBTCPrice.value = data;
+			console.log(typeof (fetchBTCPrice))
+		} else {
+			console.error('Failed to fetch data:', response.statusText);
+		}
+	} catch (error) {
+		console.error('Error fetching data:', error);
+	}
 });
 
 
@@ -31,46 +31,47 @@ onMounted(async () => {
 <template>
 	<div class="container my-5">
 		<div class="row m-5">
- <div>
-    <div v-if="fetchData">
-      <p v-for="(item, index) in fetchData.bpi.USD" :key="index">{{ item }}</p>
+			<!-- <div>
+    <div v-if="fetchBTCPrice">
+      <p v-for="(item, index) in fetchBTCPrice.bpi.USD" :key="index">{{ item }}</p>
     </div>
     <div v-else>
       <p>Loading...</p>
     </div>
-  </div>
+  </div> -->
 			<div class="col-md-4 mb-4">
 				<div class="card card-body h-100 hack">
 					<div class="d-flex align-content-center flex-wrap">
-						<span>
-							<a href="#" class="icon-link">
-								<BIconBarChartFill /> NET 404.5 Mb/S
-							</a> Where is this data from?
-						</span>
+						<a href="#" class="icon-link">
+							<BIconBarChartFill /> NET 404.5 Mb/S
+						</a> This is very fast for here
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-4 mb-4">
-				<div class="card card-body h-100 bitcoin">
-					<div class="d-flex align-content-center flex-wrap">
-						<span><a href="#" class="icon-link">
-								<BIconCurrencyBitcoin /><span class="btc">BTC </span>
-								 {{ fetchData.bpi.USD.rate }}
-							</a> Data from: api.coindesk
-						</span>
-					</div>
-				</div>
-			</div>
-
+			<!-- BITCOIN PRICE FROM COINDESK! -->
 			<div class="col-md-4 mb-4">
 				<div class="card card-body h-100 success">
 					<div class="d-flex align-content-center flex-wrap">
-						<span>
-							<a href="#" class="icon-link">
-								<BIconHeartFill /> VUE VER <span class="up">3.3.8</span>
-							</a> This App's Vue Version.
-						</span>
+						<a href="#" class="icon-link">
+							<BIconCurrencyBitcoin /><span class="btc">BTC </span>
+							<span v-if="fetchBTCPrice">
+								{{ fetchBTCPrice.bpi.USD.rate }}
+							</span>
+							<span v-else>
+								<p>Loading data from: api.coindesk...</p>
+							</span>
+						</a> Data from: api.coindesk
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 mb-4">
+				<div class="card card-body h-100 info">
+					<div class="d-flex align-content-center flex-wrap">
+						<a href="#" class="icon-link">
+							<BIconHeartFill /> VUE VER <span class="version">3.3.8</span>
+						</a> This App's Vue Version.
 					</div>
 				</div>
 			</div>
@@ -78,12 +79,10 @@ onMounted(async () => {
 			<div class="col-md-4 mb-4">
 				<div class="card card-body h-100 poll">
 					<div class="d-flex align-content-center flex-wrap">
-						<span>
-							<a href="#" class="icon-link">
-								<BIconPieChartFill />
-								Trump <span class="poll-percentage">53</span> Biden <span class="poll-percentage">45</span>
-							</a> Latest Presidential Poll
-						</span>
+						<a href="#" class="icon-link">
+							<BIconPieChartFill />
+							Trump <span class="poll-percentage">43</span> Biden <span class="poll-percentage">35</span>
+						</a> VDash Scrape and Compiled...
 					</div>
 				</div>
 			</div>
@@ -91,11 +90,9 @@ onMounted(async () => {
 			<div class="col-md-4 mb-4">
 				<div class="card card-body h-100 hack">
 					<div class="d-flex align-content-center flex-wrap">
-						<span>
-							<a href="#" class="icon-link">
-								<BIconSun /> 78 Degrees
-							</a> In Beautiful Florida USA
-						</span>
+						<a href="#" class="icon-link">
+							<BIconSun /> 78 Degrees
+						</a> Today in the Fla
 					</div>
 				</div>
 			</div>
@@ -103,11 +100,9 @@ onMounted(async () => {
 			<div class="col-md-4 mb-4">
 				<div class="card card-body h-100 success">
 					<div class="d-flex align-content-center flex-wrap">
-						<span>
-							<a href="#" class="icon-link">
-								<BIconCurrencyExchange /> Crypto:<span class="up">Up</span>
-							</a> The Broader Crypto Market
-						</span>
+						<a href="#" class="icon-link">
+							<BIconCurrencyExchange /> Crypto:<span class="up">Up</span>
+						</a> The Broader Crypto Market
 					</div>
 				</div>
 			</div>
@@ -146,37 +141,44 @@ onMounted(async () => {
 	text-decoration: none;
 }
 
-.bitcoin {
-	border: 1px solid #1e033a;
-	background-color: #1e033a;
+.info {
+	border: 1px solid #1d9bf0;
+	background-color: #1d9bf0;
 }
 
-.bitcoin a,
-.bitcoin {
-	color: #ffde89
+.info a,
+.info {
+	color: #f2f2f2
 }
 
-.dark .bitcoin {
+.info:hover{
+	background-color: #7856ff;
+} 
+
+.info .version{color:#1b3cd18f;}
+
+
+.dark .info {
 	border: 1px solid #f4c022;
 	color: #f4c022;
 	background-color: rgba(52, 46, 24, .8);
 }
 
-.dark .bitcoin:hover {
+.dark .info:hover {
 	border: 1px solid #fdcd3c;
 	color: #fccb3a;
 	background-color: #373119;
 }
 
-.dark .bitcoin a {
+.dark .info a, .info:hover .version {
 	color: #fccb3a;
 }
 
-.dark .bitcoin:hover a {
+.dark .info:hover a {
 	color: #fff;
 }
 
-.dark .bitcoin .btc {
+.dark .info .version {
 	color: #ffe7a0;
 }
 
@@ -226,7 +228,7 @@ onMounted(async () => {
 }
 
 .hack a {
-	color: #627ef9;
+	color: #ffffff;
 }
 
 .dark .vue:hover a,
@@ -259,6 +261,11 @@ onMounted(async () => {
 	background-color: #06172a !important;
 }
 
+
+.poll a {
+	color: #ffffff;
+}
+
 .poll {
 	border: 1px solid #e60000;
 	color: #FFFFFF;
@@ -282,10 +289,6 @@ onMounted(async () => {
 	border: 1px solid #de6767;
 	color: #e16161;
 	background-color: #25151b;
-}
-
-.poll a {
-	color: #ffffff;
 }
 
 .dark .poll a:hover {

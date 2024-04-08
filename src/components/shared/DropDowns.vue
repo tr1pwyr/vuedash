@@ -12,12 +12,16 @@
 					<div class="drop-down-icons">
 						<BIconFire />
 					</div>
-					<select id="selected-tab" name="selected-tab" v-model="choice" class="form-control main">
-						<option v-for="c in choices" :key="c">{{ c }}</option>
+					
+
+
+					<select id="selected-tab" name="selected-tab" v-model="link" class="form-control main">
+						<option v-for="l in links" :key="l">{{ l }}</option>
 					</select>
 					<transition name="fade">
-						<div class="rating"> {{ rating }}% </div>
+						<div class="rating"> {{ risk }}% </div>
 					</transition>
+
 				</div>
 			</section>
 
@@ -26,13 +30,14 @@
 					<div class="drop-down-icons">
 						<BIconShieldFillCheck />
 					</div>
-					<select id="selected-tab" name="selected-tab" v-model="link" class="form-control main">
-						<option v-for="l in links" :key="l">{{ l }}</option>
+					<select id="selected-tab" name="selected-tab" v-model="choice" class="form-control main">
+						<option v-for="c in choices" :key="c">{{ c }}</option>
 					</select>
 					<transition name="fade">
-						<div class="rating"> {{ risk }}% </div>
+						<div class="rating"> {{ rating }}% </div>
 					</transition>
 				</div>
+
 			</section>
 
 		</div>
@@ -45,9 +50,9 @@ import Swal from "sweetalert2";
 import { BIconFire, BIconShieldFillCheck } from "bootstrap-icons-vue";
 import { useInterval } from '../../js/useInterval';
 
-const choices = ['VueDash.org', 'AI Automation', 'Malware', 'Threat Detection', 'Network Sec', 'IP Address Log', 'WW Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
+const choices = ['Reset Data', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
-const links = ['Reset Logs', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'WW Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
+const links = ['VueDash.org', 'Tech Posts', 'Priv-Mssg.com', 'HackGuardia', 'TripKendall.com', 'Tr1pwyr@X', 'Cloud Services', 'User Devices', 'Sec Systems']
 const link = ref(links[0]);
 const answer = ref('')
 const loading = ref(false)
@@ -94,22 +99,14 @@ const updateData = async () => {
 	}
 }
 
-const handleClick = async () => {
-	Swal.fire({
-		title: "Set Range",
-		icon: "question",
-		input: "range",
-		inputLabel: "Set Upper Limit",
-		inputAttributes: {
-			min: "8",
-			max: "120",
-			step: "1"
-		},
-		inputValue: 25
-	}).then(
+const handleClick = async (url) => {
+	try {
+		window.location.href = url;
+	} catch(error){
+		console.log(error)
+	} finally {
 
-	).catch(
-	)
+	}
 }
 
 const pulse= async => {
@@ -125,8 +122,14 @@ const pulse= async => {
 watch(link, async () => {
 	try {
 		updateData();
-		// handleClick();
+		// handleClick('https://tech.foundzed.com');
+		console.log()
 		answer.value = 'yes'
+
+		if (link.value=='Tech Posts'){
+			handleClick('https://tech.foundzed.com')
+		}
+
 	} catch (error) {
 		answer.value = 'Error! Could not reach the API. ' + error
 	} finally {
