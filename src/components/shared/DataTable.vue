@@ -73,7 +73,7 @@ a.table-link:hover {
 }
 
 .dark a.table-link:hover {
-  background-color: #bd303d;
+  background-color: #6ab5db;
 }
 
 .incident-table-image{
@@ -110,8 +110,8 @@ h6{
 }
 
 .red-text{color: #e60000;}
-.green-text{color: #1b3cd1;}
+.green-text{color: #1e033a;}
 .dark .red-text{color:#b4483d;}
-.dark .green-text{color: #73ca8b;}
+.dark .green-text{color: #6ab5db;}
 
 </style>

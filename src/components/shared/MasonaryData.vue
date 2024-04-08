@@ -8,8 +8,8 @@ import LatestWeather from '../MasonaryBlocks/LatestWeather.vue'
 </script>
 
 <template>
-	<div class="container my-5">
-		<div class="row m-5">
+	<div class="container">
+		<div class="row m-4 mt-5">
 			<NetworkStats />
 			<BitcoinPrice />
 			<VueVersion />

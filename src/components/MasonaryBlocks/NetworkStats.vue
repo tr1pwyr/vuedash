@@ -1,6 +1,7 @@
 <template>
   <div class="col-md-4 mb-4">
-    <div class="card card-body h-100 net">
+    <!-- <div class="card card-body h-100 net"> -->
+			<div class="card card-body h-100">
       <div class="d-flex align-content-center flex-wrap">
         <a href="#" class="icon-link">
           <BIconBarChartFill /> NET 404.5 Mb/S </a> This is very fast for here

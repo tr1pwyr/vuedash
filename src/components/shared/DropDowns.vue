@@ -9,15 +9,15 @@
 
 			<section class="container drop-downs">
 				<div class="d-flex justify-content-center ">
+					
 					<div class="drop-down-icons">
 						<BIconFire />
 					</div>
 					
-
-
 					<select id="selected-tab" name="selected-tab" v-model="link" class="form-control main">
 						<option v-for="l in links" :key="l">{{ l }}</option>
 					</select>
+					
 					<transition name="fade">
 						<div class="rating"> {{ risk }}% </div>
 					</transition>
@@ -52,7 +52,7 @@ import { useInterval } from '../../js/useInterval';
 
 const choices = ['Reset Data', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
-const links = ['VueDash.org', 'Tech Posts', 'Priv-Mssg.com', 'HackGuardia', 'TripKendall.com', 'Tr1pwyr@X', 'Cloud Services', 'User Devices', 'Sec Systems']
+const links = ['VueDash.org', 'Tech Posts', 'Priv-Mssg.com', 'HackGuardia', 'TripKendall.com', 'Tr1pwyr@X', 'BitHost', 'Cloudflare', 'Github']
 const link = ref(links[0]);
 const answer = ref('')
 const loading = ref(false)
@@ -122,13 +122,40 @@ const pulse= async => {
 watch(link, async () => {
 	try {
 		updateData();
-		// handleClick('https://tech.foundzed.com');
-		console.log()
 		answer.value = 'yes'
+
+		if (link.value=='VueDash.org'){
+			handleClick('/')
+		}
 
 		if (link.value=='Tech Posts'){
 			handleClick('https://tech.foundzed.com')
 		}
+
+		if (link.value=='Priv-Mssg.com'){
+			handleClick('https://priv-mssg.com')
+		}
+
+		if (link.value=='TripKendall.com'){
+			handleClick('https://tripkendall.com')
+		}
+
+		if (link.value=='Tr1pwyr@X'){
+			handleClick('https://twitter.com/tr1pwyr')
+		}
+
+		if (link.value=='BitHost'){
+			handleClick('https://bithost.io')
+		}
+
+		if (link.value=='Cloudflare'){
+			handleClick('https://cloudflare.com')
+		}
+
+		if (link.value=='Github'){
+			handleClick('https://github.com/tr1pwyr')
+		}
+
 
 	} catch (error) {
 		answer.value = 'Error! Could not reach the API. ' + error

@@ -1,6 +1,7 @@
 <template>
     <div class="col-md-4 mb-4">
-      <div class="card card-body h-100 weather">
+      <div class="card card-body h-100">
+				<!-- <div class="card card-body h-100 weather"> -->
         <div class="d-flex align-content-center flex-wrap">
           <a href="#" class="icon-link">
             <BIconSun /> 78 Degrees</a> 

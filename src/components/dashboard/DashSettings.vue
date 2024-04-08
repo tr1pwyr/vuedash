@@ -1,7 +1,7 @@
 <style>
 	#dashboard-details{ margin: 1rem 0 -2rem 1rem; }
-	.twitter{ background-color: #1b3cd1; }
-	.dark .twitter{ background-color: #6ab5db;}
+	.twitter{ background-color: #D7D7D7; color: #212121; }
+	/* .dark .twitter{ background-color: #6ab5db;} */
 	.link{color:#1b3cd1!important;}
 	.dark .link{color: #6ab5db!important;}
 </style>
@@ -82,7 +82,7 @@
 							<button type="button" class="btn btn-secondary btn-floating">
 								<BIconGithub />
 							</button>
-							<button type="button" class="btn btn-secondary btn-floating twitter">
+							<button type="button" class="btn btn-secondary btn-floating">
 								<BIconTwitterX />
 							</button>
 							<button type="button" class="btn btn-secondary btn-floating">

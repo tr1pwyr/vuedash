@@ -1,6 +1,7 @@
 <template>
   <div class="col-md-4 mb-4">
-    <div class="card card-body h-100 info">
+    <!-- <div class="card card-body h-100 info"> -->
+			<div class="card card-body h-100">
       <div class="d-flex align-content-center flex-wrap">
         <a href="#" class="icon-link">
           <BIconHeartFill /> VUE VER <span class="version">3.3.8</span>

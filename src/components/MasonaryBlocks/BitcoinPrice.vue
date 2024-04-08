@@ -1,5 +1,5 @@
 <style>
-.success a {
+/* .success a {
 	color: #ffffff;
 }
 
@@ -37,13 +37,14 @@
 	border: 1px solid #49add8;
 	color: #3caddd;
 	background-color: #0d202c;
-}
+} */
 </style>
 
 <template>
   <!-- BITCOIN PRICE FROM COINDESK! -->
-  <div class="col-md-4 mb-4">
-    <div class="card card-body h-100 success">
+  <section class="col-md-4 mb-4">
+    <!-- <div class="card card-body h-100 success"> -->
+			<div class="card card-body h-100">
       <div class="d-flex align-content-center flex-wrap">
         <a href="#" class="icon-link">
           <BIconCurrencyBitcoin /><span class="btc">BTC </span>
@@ -56,7 +57,7 @@
         </a> Data from: api.coindesk
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

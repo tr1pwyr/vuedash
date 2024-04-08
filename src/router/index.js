@@ -35,6 +35,11 @@ const router = createRouter({
       component: PageView,
     },
     {
+      path: "/more",
+      name: "MoreWidgets",
+      component: () => import("../views/MoreWidgets.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("../views/NotFound.vue"),
