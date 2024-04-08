@@ -11425,6 +11425,36 @@ output{
   color: #fefefe!important;
 }
 
+.icon-link {
+	display: block;
+	text-decoration: none;
+	font-weight: 800;
+	font-size: 1.33rem;
+	letter-spacing: -1px;
+	word-spacing: -1px;
+	padding-bottom: .33rem;
+	margin-top: -.25rem;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col-md-4 {
+	display: flex;
+}
+
+.card {
+	margin-bottom: .75rem;
+	cursor: pointer;
+}
+
+.card a {
+	text-decoration: none;
+}
+
+
 .site-content {
   margin-top: 100px;
 }

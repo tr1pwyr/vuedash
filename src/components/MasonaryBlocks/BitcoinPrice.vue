@@ -3,7 +3,6 @@
 	color: #ffffff;
 }
 
-/* .success a {color: #b0f2c3;} */
 .success a:hover {
 	color: #fff;
 }
