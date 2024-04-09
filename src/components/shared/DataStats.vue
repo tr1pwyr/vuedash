@@ -1,5 +1,5 @@
 <template>
-	<section class="stats">
+	<section class="stats mx-5">
 		<div class="row">
 
 			<div class="col-sm stat">
@@ -169,7 +169,7 @@ onMounted(() => {
 }
 
 .dark .data {
-	color: #bd303d;
+	color: #6ab5db;
 }
 
 .dash-date {

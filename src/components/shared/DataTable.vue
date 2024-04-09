@@ -89,7 +89,7 @@ a.table-link:hover {
 }
 
 .dark .incident-table .table-responsive{
-	background-color:#060606;
+	background-color:#06060684;
 	border-radius: .5rem;
 	padding: 1rem 1rem 0 0;
 }
@@ -109,7 +109,7 @@ h6{
 	margin-left: .5rem;
 }
 
-.red-text{color: #e60000;}
+.red-text{color: #623e88;}
 .green-text{color: #1e033a;}
 .dark .red-text{color:#b4483d;}
 .dark .green-text{color: #6ab5db;}

@@ -64,6 +64,7 @@
       </div>
       <DataTable />
       <TheTags />
+      <MasonaryLists />
       <DataStats v-if="renderComponent" />
       <LineChart />
 
@@ -83,6 +84,7 @@ import DashSettings from "../components/dashboard/DashSettings.vue"
 import DataTable from "../components/shared/DataTable.vue"
 import DropDowns from "../components/shared/DropDowns.vue"
 import MasonaryData from "../components/shared/MasonaryData.vue"
+import MasonaryLists from "../components/shared/MasonaryLists.vue";
 import { store } from "../store";
 import { plByMonth } from '../js/data'
 import {

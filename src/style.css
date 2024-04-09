@@ -385,7 +385,7 @@ a {
 }
 
 a:hover {
-  color: #e60000;
+  color: #1e033a;
 }
 
 .dark a {
@@ -4755,13 +4755,34 @@ fieldset:disabled .btn {
   word-wrap: break-word;
   background-color: #ffffff;
   background-clip: border-box;
-  border: none;
+  border: 1px solid #ffffff;
   border-radius: var(--bs-card-border-radius);
+}
+
+.card:hover {
+  color: #1e033a;
+  border: 1 px solid #dedede;
+  box-shadow: -1px 14px 14px -11px rgba(0,0,0,0.1)!important;
+  -webkit-box-shadow: -1px 14px 14px -11px rgba(0,0,0,0.1)!important;
+  -moz-box-shadow: -1px 14px 14px -11px rgba(0,0,0,0.1)!important;
 }
 
 .dark .card{
   background-color: rgba(0, 0, 0, .25);
   color: #525252;
+}
+
+.dark .card:hover {
+  background-color: #00000071;
+}
+
+.card {
+	margin-bottom: .75rem;
+	cursor: pointer;
+}
+
+.card a {
+	text-decoration: none;
 }
 
 .card>hr {
@@ -11415,14 +11436,7 @@ output{
 	display: flex;
 }
 
-.card {
-	margin-bottom: .75rem;
-	cursor: pointer;
-}
 
-.card a {
-	text-decoration: none;
-}
 
 
 .site-content {
