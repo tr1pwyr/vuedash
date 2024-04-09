@@ -11,6 +11,8 @@ description: The Vue Dashboard
 
 This is very much as work in progress.  At this point it is an interesting starting framework for a Vue Dashboard.  It is a Bootstrap CSS styled, component based, Vue3 (Vite) Template.
 
+![./dashboard.webp](screenshots)
+
 You can get started with:
 
 ```npm run dev```
