@@ -1,5 +1,5 @@
 <style>
-	#dashboard-details{ margin: 1rem 0 -2rem 1rem; }
+	#dashboard-details{ margin: 1rem 0 -2rem 0; }
 	.twitter{ background-color: #D7D7D7; color: #212121; }
 	/* .dark .twitter{ background-color: #6ab5db;} */
 	.link{color:#1b3cd1!important;}
@@ -7,7 +7,7 @@
 </style>
 
 <template>
-	<div class="container" id="dashboard-details">
+	<div class="container px-5" id="dashboard-details">
 		<div class="row d-flex justify-content-center align-items-center pt-5">
 
 			<div class="col">

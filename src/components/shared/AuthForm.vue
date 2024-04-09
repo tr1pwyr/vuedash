@@ -116,7 +116,7 @@ const goTo = () => {
 
 
 .login{
-  color: #e60000;
+  color: #7d7d7d;
   padding-left: 10px;
 }
 

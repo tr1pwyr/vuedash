@@ -37,10 +37,10 @@
           </li>
 
           <li>
-            <a href="/#monitoring" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
+            <a href="/#logs" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip"
               data-bs-placement="right" data-bs-original-title="Orders">
               <BIconIncognito class="bi-icon fs-2" />
-              <div class="icon-label">Monitoring</div>
+              <div class="icon-label">View Logs</div>
             </a>
           </li>
 
@@ -64,11 +64,13 @@
       </div>
       <DataTable />
       <TheTags />
-      <MasonaryLists />
+      <div id="logs">
+        <MasonaryLists />
+      </div>
       <DataStats v-if="renderComponent" />
-      <LineChart />
+      <!-- <LineChart />
 
-      <TwoCharts />
+      <TwoCharts /> -->
     </section>
 
   </div>

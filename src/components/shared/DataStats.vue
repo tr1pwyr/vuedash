@@ -1,5 +1,5 @@
 <template>
-	<section class="stats mx-5">
+	<section class="stats m-5">
 		<div class="row">
 
 			<div class="col-sm stat">
@@ -121,7 +121,7 @@ onMounted(() => {
 	font-weight: 700;
 	font-size: 1.75rem;
 	background-color: #ffffff!important;
-	border-bottom: 25px solid #efedfa;
+	border-bottom: 25px solid #e9e9e9;
 	border-radius: .33rem;
 	
 }

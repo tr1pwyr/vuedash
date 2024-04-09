@@ -2,42 +2,36 @@
 	<div id="drop-down">
 		
 		<!-- This is the "clock", but really it's an example of using the useInterval -->
-		
 		<div id="display-time">{{ displayTime }}</div>
 
 		<div class="d-flex justify-content-between">
 
-			<section class="container drop-downs">
+			<section class=" drop-downs">
 				<div class="d-flex justify-content-center ">
-					
 					<div class="drop-down-icons">
 						<BIconFire />
 					</div>
-					
 					<select id="selected-tab" name="selected-tab" v-model="link" class="form-control main">
 						<option v-for="l in links" :key="l">{{ l }}</option>
 					</select>
-					
 					<transition name="fade">
 						<div class="rating"> {{ risk }}% </div>
 					</transition>
-
 				</div>
 			</section>
 
-			<section class="container drop-downs">
+			<section class="drop-downs" id="ratings-tab">
 				<div class="d-flex justify-content-start">
 					<div class="drop-down-icons">
 						<BIconShieldFillCheck />
 					</div>
-					<select id="selected-tab" name="selected-tab" v-model="choice" class="form-control main">
+					<select id="rating-tab" name="selected-tab" v-model="choice" class="form-control main">
 						<option v-for="c in choices" :key="c">{{ c }}</option>
 					</select>
 					<transition name="fade">
 						<div class="rating"> {{ rating }}% </div>
 					</transition>
 				</div>
-
 			</section>
 
 		</div>
@@ -52,8 +46,22 @@ import { useInterval } from '../../js/useInterval';
 
 const choices = ['Reset Data', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
-const links = ['VueDash.org', 'Tech Posts', 'Priv-Mssg.com', 'HackGuardia', 'TripKendall.com', 'Tr1pwyr@X', 'BitHost', 'Cloudflare', 'Github']
+
+const links = ['VueDash.org', 'Tech Posts', 'Priv-Mssg.com', 'HackGuardia', 'TripKendall.com', 'Tr1pwyr@X', 'BitHost', 'Cloudflare', 'Github', 'addy']
 const link = ref(links[0]);
+
+const linkUrlMap = {
+  'VueDash.org': '/',
+  'Tech Posts': 'https://tech.foundzed.com',
+  'Priv-Mssg.com': 'https://priv-mssg.com',
+  'TripKendall.com': 'https://tripkendall.com',
+  'Tr1pwyr@X': 'https://twitter.com/tr1pwyr',
+  'BitHost': 'https://bithost.io',
+  'Cloudflare': 'https://cloudflare.com',
+  'Github': 'https://github.com/tr1pwyr',
+  'Addy': 'https://app.addy.io/'
+};
+
 const answer = ref('')
 const loading = ref(false)
 const rating = ref(93)
@@ -100,15 +108,14 @@ const updateData = async () => {
 }
 
 const handleClick = async (url) => {
-	try {
-		window.location.href = url;
-	} catch(error){
-		console.log(error)
-	} finally {
-
-	}
-}
-
+  try {
+    window.location.href = url;
+  } catch(error){
+    console.log(error);
+  } finally {
+    loading.value = false;
+  }
+};
 const pulse= async => {
 	const randomNumber = Math.floor(Math.random() * 8) + 1;
 	if (randomNumber === 7) {
@@ -120,49 +127,21 @@ const pulse= async => {
 }
 
 watch(link, async () => {
-	try {
-		updateData();
-		answer.value = 'yes'
+  try {
+    updateData();
+    answer.value = 'yes';
+    const selectedLink = link.value;
+    const url = linkUrlMap[selectedLink];
 
-		if (link.value=='VueDash.org'){
-			handleClick('/')
-		}
-
-		if (link.value=='Tech Posts'){
-			handleClick('https://tech.foundzed.com')
-		}
-
-		if (link.value=='Priv-Mssg.com'){
-			handleClick('https://priv-mssg.com')
-		}
-
-		if (link.value=='TripKendall.com'){
-			handleClick('https://tripkendall.com')
-		}
-
-		if (link.value=='Tr1pwyr@X'){
-			handleClick('https://twitter.com/tr1pwyr')
-		}
-
-		if (link.value=='BitHost'){
-			handleClick('https://bithost.io')
-		}
-
-		if (link.value=='Cloudflare'){
-			handleClick('https://cloudflare.com')
-		}
-
-		if (link.value=='Github'){
-			handleClick('https://github.com/tr1pwyr')
-		}
-
-
-	} catch (error) {
-		answer.value = 'Error! Could not reach the API. ' + error
-	} finally {
-		loading.value = false
-	}
-})
+    if (url) {
+      handleClick(url);
+    }
+  } catch (error) {
+    answer.value = 'Error! Could not reach the API. ' + error;
+  } finally {
+    loading.value = false;
+  }
+});
 
 watch(choice, async () => {
 	try {
@@ -195,13 +174,23 @@ onBeforeUnmount(() => {
 #drop-down{
 }
 
+#selected-tab, #rating-tab{
+	min-width: 300px;
+}
+
+@media (max-width: 991.98px) {
+	#ratings-tab{
+		display: none;
+	}
+}
+
 .drop-downs{
-	margin: none!important;
+	margin: 0 3rem 0 3rem;
 }
 
 #display-time {
 	text-align: right;
-	margin: 3.5rem 2.5rem 2rem 0;
+	margin: 3.5rem 3.3rem 2rem 0;
 	font-size: 13px;
 	color: #555;
 }
@@ -230,7 +219,7 @@ onBeforeUnmount(() => {
 	color: #222222;
 }
 
-#selected-tab {
+#selected-tab, #rating-tab {
 	max-width: 320px;
 	background-color: #FFFFFF;
 	border: 2px solid #cccccc50;
@@ -243,9 +232,9 @@ onBeforeUnmount(() => {
 	border: 2px solid #1e033a50!important;
 }
 
-.dark #selected-tab {
+.dark #selected-tab, .dark #rating-tab {
 	background-color: #151515;
-	border: 2px solid #2c2c2c;
+	border: 2px solid #1a1a1a;
 	color: #dae0e77d !important;
 }
 

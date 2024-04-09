@@ -3482,6 +3482,11 @@ textarea.form-control.is-invalid {
   background-color: var(--bs-btn-bg);
 }
 
+.dark .btn{
+  background-color: #6ab5db;
+  color: #fff;
+} 
+
 @media (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
@@ -3564,8 +3569,6 @@ fieldset:disabled .btn {
   background-color: #f91880;
   border-color: #f91880;
 }
-
-
 
 .secondary-icon {
   color: #b3b3b3;
@@ -4743,7 +4746,7 @@ fieldset:disabled .btn {
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
-  --bs-card-color: #ccc;
+  --bs-card-color: #8f8f8f;
   /* --bs-card-bg: rgba(21, 24, 26, 0.5) !important; */
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
@@ -4770,6 +4773,7 @@ fieldset:disabled .btn {
 .dark .card{
   background-color: rgba(0, 0, 0, .25);
   color: #525252;
+  border: 1px solid #000000;
 }
 
 .dark .card:hover {
@@ -11529,7 +11533,7 @@ a.more {
 .dark .main-footer {
   border-top: 5px solid #131313;
   background-color: #101010;
-  margin-top: 50px;
+
 }
 
 .main-footer .footer-wrapper {
