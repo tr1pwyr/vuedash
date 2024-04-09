@@ -19,7 +19,9 @@ You can get started with:
 
 ```npm run build```
 		
-This is built to be used with the super simple Node Express backend I created but it does not depend on it.  
+This is built to be used with the super simple Node Express backend I created but it does not depend on it as I have added sample data so the widgets show up.  I have left 3rd party api calls in tact where they make sense ( btc price, news headlines, etc. ).
+
+You are welcome to form it or even submit pull requests, etc. but it is early days - there will be breaking changes.
 
 The pages ( this page, contact, etc.) use the PageView.vue file in the views folder. It uses userRoute() to handle route.params to direct it to the correct page. The components for pages are in /components/pages 
 
@@ -29,3 +31,5 @@ If you are looking for a specific chart or part of the homepage you best bet is 
 I need a way to have the universal function:
 - useInterval is that function /src/js/useInterval
 - want a way to have a global pulse the way dop downs has a pulse...
+- figure out a way to do dark mode and light mode charts...
+- choose list of approved / suggested 3rd party API's
