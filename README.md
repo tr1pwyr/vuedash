@@ -21,9 +21,9 @@ You can get started with:
 		
 This is built to be used with the super simple Node Express backend I created but it does not depend on it as I have added sample data so the widgets show up.  I have left 3rd party api calls in tact where they make sense ( btc price, news headlines, etc. ).
 
-You are welcome to form it or even submit pull requests, etc. but it is early days - there will be breaking changes.
+You are welcome to fork it, submit pull requests, etc. but it is early days - there will be breaking changes. 
 
-The pages ( this page, contact, etc.) use the PageView.vue file in the views folder. It uses userRoute() to handle route.params to direct it to the correct page. The components for pages are in /components/pages 
+The pages ( the about page, contact, etc.) use the PageView.vue file in the views folder. It uses userRoute() to handle route.params to direct it to the correct page. The components for pages are in /components/pages 
 
 If you are looking for a specific chart or part of the homepage you best bet is to look at the /components folder. The header and footer are in the layout sub-folder, most of the rest of the components are in the shared and pages sub folders respectively. 
 
