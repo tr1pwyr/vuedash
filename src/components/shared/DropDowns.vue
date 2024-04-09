@@ -47,9 +47,9 @@ import { useInterval } from '../../js/useInterval';
 const choices = ['Reset Data', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
 
+// Be careful changing this bit, I know you want to use these keys instead of the links array... 
 const links = ['VueDash.org', 'Tech Posts', 'Priv-Mssg.com', 'HackGuardia', 'TripKendall.com', 'Tr1pwyr@X', 'BitHost', 'Cloudflare', 'Github', 'addy']
 const link = ref(links[0]);
-
 const linkUrlMap = {
   'VueDash.org': '/',
   'Tech Posts': 'https://tech.foundzed.com',
@@ -116,6 +116,7 @@ const handleClick = async (url) => {
     loading.value = false;
   }
 };
+
 const pulse= async => {
 	const randomNumber = Math.floor(Math.random() * 8) + 1;
 	if (randomNumber === 7) {
@@ -129,13 +130,11 @@ const pulse= async => {
 watch(link, async () => {
   try {
     updateData();
-    answer.value = 'yes';
-    const selectedLink = link.value;
-    const url = linkUrlMap[selectedLink];
-
+    const url = linkUrlMap[link.value];
     if (url) {
       handleClick(url);
     }
+		answer.value = 'yes';
   } catch (error) {
     answer.value = 'Error! Could not reach the API. ' + error;
   } finally {

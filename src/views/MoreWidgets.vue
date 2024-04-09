@@ -1,19 +1,18 @@
 <template>
-  <section class="masonary-lists">
+  <section class="masonary-lists mt-5">
     <MasonaryLists />
-    <div class="list-footer">
-      <BIconExclamationTriangleFill />
-      Data last reset March 24th 2024
+    <div class="list-footer container">
+      <BIconExclamationTriangleFill /> Data last reset March 24th 2024
+      <IpAddress />
     </div>
   </section>
 </template>
 
-
 <script setup>
 import MasonaryLists from '../components/shared/MasonaryLists.vue';
+import IpAddress from '../components/shared/IpAddress.vue';
 import { BIconExclamationTriangleFill } from "bootstrap-icons-vue";
 </script>
-
 
 <style scoped>
 .masonary-lists{
