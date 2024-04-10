@@ -63,7 +63,7 @@ import { BIconReception3 } from "bootstrap-icons-vue";
 }
 
 .brand:hover {
-  background-image: linear-gradient(to bottom left, transparent 50%, #1e033a 50%), linear-gradient(#1e033a, #1e033a), linear-gradient(#1e033a, #1e033a);
+  background-image: linear-gradient(to bottom left, transparent 50%, #2c96c3 50%), linear-gradient(#2c96c3, #2c96c3), linear-gradient(#2c96c3, #2c96c3);
   background-size: 25px 25px, 100% 100%, 100% 100%;
   background-position: 100% 0%, -25px 0%, 100% 25px;
   background-repeat: no-repeat;

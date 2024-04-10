@@ -6,13 +6,24 @@
         <div id="eth-icon"></div>
         <h3>Book Consulting Via Eth</h3>
       </div>
-      
-      <h5 class="pb-5">Select one of the options below to perform a cryptocurrency transaction via the Ethereum
-        network. $50 buys you an hour of consulting. </h5>
+
+      <ul class="steps">
+        <li>
+          First - <a @click="checkIfWalletConnected" class="wallet-check">
+            Check that your wallet is accessible.
+          </a> 
+        </li>
+        <li class="pb-5">
+          Next - Select one of the options below to perform a cryptocurrency transaction via the Ethereum
+          network. $50 buys you an hour of consulting. 
+        </li>
+      </ul>
+
       <div class="d-flex gap-4">
-        <button @click="checkWalletConnected" class="py-2 btn btn-primary d-flex">
-          <!-- <img src="/images/metamask-logo.png" class="w-6 me-3" alt=""> -->
-          Metamask</button>
+        <button @click="checkWalletConnected" id="meta-mask-button" class="py-2 px-4 btn btn-secondary d-flex">
+          <img src="/images/metamask-logo.png" class="me-2 btn-icon" alt="">
+          Metamask 
+        </button>
         <button class="py-2 btn btn-secondary d-flex disabled">
           <!-- <img src="@/assets/logos/coinbase-logo.svg"
             class="w-6 me-3" alt="">  -->
@@ -103,8 +114,7 @@
 <script setup>
 import { ref } from 'vue';
 import Web3 from 'web3';
-// const config = useRuntimeConfig();
-
+import Swal from "sweetalert2";
 let connected = ref(false);
 let checkoutStep = ref(false);
 let updateModal = ref(0);
@@ -119,7 +129,23 @@ const itemPrice = ref(49.99);
 const itemPriceInWei = "2536783359"; // 49.99$ in wei (at time of dev)
 let buyerEmail = ref('');
 
-checkIfWalletConnected();
+const handleNoWallet = async () => {
+	Swal.fire({
+  title: "No Wallet Found",
+  text: "Is MetaMask Installed?",
+  icon: "question"
+});
+}
+
+const handleHasWallet = async () => {
+	Swal.fire({
+  title: "Wallet Found!",
+  text: "Please choose one of the buttons below",
+  icon: "info"
+});
+}
+
+// checkIfWalletConnected();
 
 function checkIfWalletConnected() {
 
@@ -134,11 +160,13 @@ function checkIfWalletConnected() {
     })
     ) {
       connected.value = true;
+      handleHasWallet();
     } else {
       connected.value = false;
     }
   } catch (error) {
     console.log(error)
+    handleNoWallet();
   }
 
 }
@@ -163,9 +191,7 @@ function checkWalletConnected() {
         });
 
     });
-  } else if (window.web3) {
-    window.web3 = new Web3(window.web3.currentProvider);
-    connected = true;
+  } else if (window.web3) {secondary
 
     // Force update of the modal
     updateModal.value++;
@@ -203,13 +229,31 @@ function makePaymentRequest() {
 
 <style scoped>
 
+#meta-mask-button{
+  font-weight:700!important;
+  font-size: 1.1rem;
+  margin-left: 2rem;
+}
+
+.dark h3{
+  border-bottom: 3px solid #22222269;
+}
+
+h3{
+  border-bottom: 3px solid #22222212;
+}
+
 #EthPay{
   background-color: #ffffff;
   margin: 100px 0;
+  border-top: 15px solid #dcdcdc66;
+  border-bottom: 15px solid #dcdcdc66;
 }
 
 .dark #EthPay{
   background-color: #0c0c0c;
+  border-top: 15px solid #23232366;
+  border-bottom: 15px solid #23232366;
 }
 
 #eth-icon{
@@ -228,9 +272,29 @@ function makePaymentRequest() {
   opacity: .4
 }
 
+
+.wallet-check{
+  color:#2c96c3!important;
+  cursor:pointer;
+}
+
+.dark .wallet-check{
+  color:#6ab5db!important;
+}
+
+ul.steps li {
+  font-size: 1.25rem;
+  list-style-type: none;
+  padding-top: 25px;
+}
+
 .button-custom {
   background-color: #5554d4;
   color: #fff;
+}
+
+.btn-icon{
+  margin-top: -2px;
 }
 
 .disabled-custom {

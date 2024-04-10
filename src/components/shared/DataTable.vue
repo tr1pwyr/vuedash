@@ -68,7 +68,7 @@ import { data } from '../../js/leaderBoardData.js'
 
 a.table-link:hover {
   color: #fff;
-  background-color: #1e033a;
+  background-color: #2c96c3;
   border-radius: .3rem;
 }
 
