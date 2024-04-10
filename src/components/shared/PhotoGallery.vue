@@ -4,7 +4,7 @@ import { imgs } from "../../js/imgs"
 
 <template>
 	<div class="container" id="photo-gallery">
-		<div class="row m-5 py-5">
+		<div class="row py-5">
 			<div class="col-md-4 mb-4" v-for="i in imgs" :key="i">
 				<div class="card card-body h-100 cover">
 					<div class="d-flex align-content-center flex-wrap">
@@ -21,6 +21,9 @@ import { imgs } from "../../js/imgs"
 </template>
 
 <style>
+#photo-gallery{
+	margin: 1rem 1rem 1rem 0;
+}
 #photo-gallery img{
 	margin: .5rem;
 	border-radius: .5rem;

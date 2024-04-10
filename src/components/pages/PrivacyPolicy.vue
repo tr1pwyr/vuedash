@@ -5,7 +5,7 @@
         <div class="col-md-10 m-auto mb-5">
 
           <article class="single-post text-center">
-            <h1 class="post-title">{{ pageData.title }}</h1>
+            <h1>{{ pageData.title }}</h1>
             <h3>{{ pageData.subtitle }}</h3>
           </article>
 
