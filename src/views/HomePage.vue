@@ -62,15 +62,14 @@
        <div id="monitoring">
         <MasonaryData />
       </div>
+      <MasonaryNews />
+      <DataStats v-if="renderComponent" />
       <DataTable />
       <TheTags />
       <div id="logs">
         <MasonaryLists />
       </div>
-      <DataStats v-if="renderComponent" />
-      <!-- <LineChart />
-
-      <TwoCharts /> -->
+    
     </section>
 
   </div>
@@ -78,8 +77,7 @@
 </template>
 
 <script setup>
-import LineChart from "../components/dashboard/LineChart.vue";
-import TwoCharts from "../components/dashboard/TwoCharts.vue"
+import MasonaryNews from "../components/shared/MasonaryNews.vue"
 import DataStats from "../components/shared/DataStats.vue"
 import TheTags from "../components/shared/TheTags.vue"
 import DashSettings from "../components/dashboard/DashSettings.vue"

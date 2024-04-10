@@ -1,5 +1,5 @@
 <template>
-	<section class="stats m-5">
+	<section class="stats">
 		<div class="row">
 
 			<div class="col-sm stat">
@@ -117,7 +117,7 @@ onMounted(() => {
 <style scoped>
  .stats {
 	padding: 2rem;
-	margin: 0;
+	margin: 0 3rem 3rem 3rem;
 	font-weight: 700;
 	font-size: 1.75rem;
 	background-color: #ffffff!important;
@@ -164,6 +164,7 @@ onMounted(() => {
 
 .data{
 	padding-top: 2px;
+	padding-left: 2px;
 	font-size: .85rem;
 	color: #1e033a;
 }

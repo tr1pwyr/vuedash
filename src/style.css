@@ -11571,8 +11571,8 @@ a.more {
 }
 
 .dark .main-footer .footer-wrapper ul li a:hover {
-  color: #fff;
-  background-color: #bd303d;
+  color: #000;
+  background-color: #6ab5db;
   border-radius: .3rem;
 }
 
@@ -11581,7 +11581,6 @@ a.more {
   padding: 50px 0;
   border-top: 5px solid #e7e7e7;
   color: var(--bs-body-color);
-
   background-color: var(--bs-body-bg);
 }
 
