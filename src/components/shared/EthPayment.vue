@@ -9,8 +9,8 @@
 
       <ul class="steps">
         <li>
-          First - <a @click="checkIfWalletConnected" class="wallet-check">
-            Check that your wallet is accessible.
+          First - <a @click="checkIfWallet" class="wallet-check">
+          Check that your wallet is accessible.
           </a> 
         </li>
         <li class="pb-5">
@@ -27,7 +27,6 @@
         <button class="py-2 btn btn-secondary d-flex disabled">
           <!-- <img src="@/assets/logos/coinbase-logo.svg"
             class="w-6 me-3" alt="">  -->
-
           Coinbase wallet</button>
       </div>
     </div>
@@ -62,8 +61,7 @@
 
     <div class="p-4 max-w-xl" v-if="checkoutStep" :key="updateModal">
 
-      <span class="">Here is the information regarding the order. Please confirm everything is correct and complete your
-        purchase.</span>
+      <span class="text">Please check details to confirm:</span>
 
       <div class="d-flex mt-4">
         <h3>Total: {{ itemPrice }}</h3>
@@ -147,7 +145,7 @@ const handleHasWallet = async () => {
 
 // checkIfWalletConnected();
 
-function checkIfWalletConnected() {
+function checkIfWallet() {
 
   try {
     if (window.ethereum.request({ method: 'eth_accounts' }).then(function (accounts) {
@@ -271,7 +269,6 @@ h3{
   background-image: url(/images/eth2.webp);
   opacity: .4
 }
-
 
 .wallet-check{
   color:#2c96c3!important;

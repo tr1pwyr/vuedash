@@ -27,7 +27,5 @@ h1{
 	color: #353535;
   border-bottom: 3px solid #31313130;
 }
-h3{
-	color: #000000;
-}
+
 </style>

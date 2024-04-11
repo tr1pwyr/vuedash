@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/HomePage.vue";
+import Edit from "../views/EditLink.vue";
+import Add from "../views/AddLink.vue"
 import PageView from "../views/PageView.vue";
+import Search from "../views/SearchPage.vue";
 import axios from "../js/axios";
 import { store } from "../store";
 
@@ -9,11 +12,27 @@ const router = createRouter({
   routes: [
     // this is how my simple backend login deal works on the front-end
     // {
-    //   path: "/",
-    //   name: "home",
-    //   component: HomeView,
+    //   path: "/admin/:name",
+    //   name: "Admin",
+    //   component: AdminView,
     //   meta: { requiresAuth: true },
     // },
+    
+    {
+      path: "/edit/:name",
+      name: "Edit",
+      component: Edit,
+      // meta: { requiresAuth: true },
+    },
+
+    {
+      path: "/add",
+      name: "Add",
+      component: Add,
+      // meta: { requiresAuth: true },
+    },
+
+
     {
       path: "/",
       name: "Home",
@@ -33,6 +52,11 @@ const router = createRouter({
       path: "/page/:name",
       name: "PageView",
       component: PageView,
+    },
+    {
+      path: "/search/:name",
+      name: "Search",
+      component: Search,
     },
     {
       path: "/more",
