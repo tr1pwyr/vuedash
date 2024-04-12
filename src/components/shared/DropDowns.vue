@@ -1,7 +1,7 @@
 <template>
 	<div id="drop-down">
 
-		<div class="d-flex justify-content-between">
+		<div class="d-flex justify-content-between headline">
 			
 			<div>
 				<div id="user-info" v-if="store?.username">
@@ -206,6 +206,10 @@ onBeforeUnmount(() => {
 	}
 }
 
+@media screen and (max-width: 767.98px) {
+  .headline{ display: block!important;}
+}
+
 .drop-downs{
 	margin: 0 3rem;
 }
@@ -218,7 +222,7 @@ onBeforeUnmount(() => {
 }
 
 #user-info {
-	margin: 3.5rem 0 2rem 3.5rem;
+	margin: 0 0 2rem 3.5rem;
 	font-size: 13px;
 	color: #555;
 }

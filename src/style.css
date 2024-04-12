@@ -11681,14 +11681,17 @@ border: 2px solid #dce4ec;
   #dashboard {display: flex;}
   .dashboard-menu {
     flex: 0 0 auto;
-  
   }
   .dashboard-main {flex: 1; }
 }
 @media screen and (max-width: 767.98px) {
   .dashboard { display: block;}
+  .dashboard-menu {display:none;}
 }
 
 .dashboard-menu{
-  margin: 5rem 0 0 0;
+  margin: 4.5rem 0 0 0;
+}
+.dashboard-main {
+  padding-top: 50px;
 }
