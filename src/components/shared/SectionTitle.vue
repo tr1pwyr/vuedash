@@ -18,7 +18,7 @@ const props = defineProps({
 
 <style scoped>
 h1{
-	font-size: 3rem;
+	font-size: 2.75rem;
 	margin: 0 3rem;
 	color: #7d7d7d;
   border-bottom: 3px solid #e8e8e8;

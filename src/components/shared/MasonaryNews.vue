@@ -22,7 +22,7 @@ const popularNews = {
 </script>
 
 <template>
-	<div class="container px-5 mb-5">
+	<div class="container px-5 mb-4">
 		<div class="row">
 			<section class="col-md-6">
 				<div class="card card-body h-100 link-list">

@@ -117,7 +117,7 @@ onMounted(() => {
 <style scoped>
  .stats {
 	padding: 2rem;
-	margin: 0 3rem 3rem 3rem;
+	margin: 0 3rem 2rem 3rem;
 	font-weight: 700;
 	font-size: 1.75rem;
 	background-color: #ffffff!important;
@@ -141,7 +141,7 @@ onMounted(() => {
 }
 
 .stat:hover{
-	color: #1e033a;
+	color: #2c96c3;
 }
 
 .dark .stat:hover {
@@ -166,7 +166,7 @@ onMounted(() => {
 	padding-top: 2px;
 	padding-left: 2px;
 	font-size: .85rem;
-	color: #1e033a;
+	color: #2c96c3;
 }
 
 .dark .data {

@@ -77,7 +77,6 @@ onMounted(async () => {
   });
 });
 
-
 </script>
 
 <style scoped>
@@ -91,6 +90,15 @@ onMounted(async () => {
   margin-top: -2px;
   margin-bottom: 2px!important;
   padding-bottom: 0!important;
+  color:#7d7d7d;
+}
+
+.dark #LatestResults h5, #LatestResults h5:hover {
+  color:#6ab5db;
+}
+
+.dark #LatestResults h5:hover{
+  color: #2c96c3;
 }
 
 .results-text{
@@ -118,7 +126,7 @@ a.d-link {
   display: flex;
   justify-items: left;
   align-items: left;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 50px;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);

@@ -4,7 +4,7 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <h5>Internal Links:</h5>
+          <h5>Pages:</h5>
           <ul class="list-unstyled">
             <li v-for="link in internalLinks" :key="link.id">
               <a :href="link.link">{{ link.title }}</a>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <h5>Articles:</h5>
+          <h5>Links:</h5>
           <ul class="list-unstyled">
             <li v-for="link in hotLinks" :key="link.id">
               <a :href="link.link">{{ link.title }}</a>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <h5>Links:</h5>
+          <h5>Search:</h5>
           <ul class="list-unstyled">
             <li v-for="link in moreLinks" :key="link.id">
               <a :href="link.link">{{ link.title }}</a>
@@ -108,23 +108,23 @@ const externalLinks = ref([
 
 const moreLinks = ref([
   {
-    title: "Technology",
-    link: "https://tech.foundzed.com/",
+    title: "More...",
+    link: "/more",
     id: "11",
   },
   {
-    title: "Entertainment",
-    link: "https://ent.foundzed.com/",
+    title: "Latest Links",
+    link: "/search/latest",
     id: "12",
   },
   {
-    title: "Politics",
-    link: "https://pol.foundzed.com/",
+    title: "List of Links",
+    link: "/search/full",
     id: "13",
   },
   {
-    title: "Business",
-    link: "https://biz.foundzed.com",
+    title: "Add Link",
+    link: "/add",
     id: "14",
   },
 
@@ -132,23 +132,23 @@ const moreLinks = ref([
 
 const hotLinks = ref([
   {
-    title: "Digital Security",
-    link: "https://hackguardia/article/security",
+    title: "Privacy Policy",
+    link: "/page/privacy",
     id: "16",
   },
   {
-    title: "Ransomeware",
-    link: "https://hackguardia/article/ransomware",
+    title: "Charts",
+    link: "/page/charts",
     id: "17",
   },
   {
-    title: "Personal Privacy",
-    link: "https://hackguardia/article/privacy",
+    title: "Sign Up",
+    link: "/login",
     id: "18",
   },
   {
-    title: "Deep Fakes",
-    link: "https://hackguardia/article/deepfakes",
+    title: "Register",
+    link: "/register",
     id: "19",
   },
 
