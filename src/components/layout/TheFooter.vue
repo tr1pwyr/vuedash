@@ -14,8 +14,8 @@
     </div>
 
     <div class="copyright-text">
-      <p class="mt-2">&copy; {{ data.year }} 
-        <a :href="data.link"> {{ data.site }}</a> 
+      <p class="mt-2">&copy; {{ data.year }}
+        <a :href="data.link"> {{ data.site }}</a>
         {{ data.copy }}
       </p>
     </div>
@@ -33,12 +33,12 @@ const data = ref({
 });
 
 // this was throwing an order of initialization error?
-const hotLinks = ref([
-  { title: "Privacy Policy", link: "/page/privacy", id: "16" },
-  { title: "Charts", link: "/page/charts", id: "17" },
-  { title: "Sign Up", link: "/login", id: "18" },
-  { title: "Register", link: "/register", id: "19" }
-]);
+// const hotLinks = ref([
+//   { title: "Privacy Policy", link: "/page/privacy", id: "16" },
+//   { title: "Charts", link: "/page/charts", id: "17" },
+//   { title: "Sign Up", link: "/login", id: "18" },
+//   { title: "Register", link: "/register", id: "19" }
+// ]);
 
 const sections = ref([
   {
@@ -70,7 +70,12 @@ const sections = ref([
   },
   {
     title: "Search",
-    links: hotLinks.value
+    links: [
+      { title: "Privacy Policy", link: "/page/privacy", id: "16" },
+      { title: "Charts", link: "/page/charts", id: "17" },
+      { title: "Sign Up", link: "/login", id: "18" },
+      { title: "Register", link: "/register", id: "19" }
+    ]
   }
 ]);
 </script>

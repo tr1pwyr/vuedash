@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="LatestResults">
 
-    <SectionTitle :heading="content" />
+    <!-- <SectionTitle :heading="content" /> -->
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
       <div v-for="data in theLinks" :key="data.term" class="">
@@ -82,7 +82,7 @@ onMounted(async () => {
 <style scoped>
 
 #LatestResults{
-  margin: 1rem 0 15px 15px;
+  margin: 3rem 0 15px 15px;
 }
 
 #LatestResults h5{
