@@ -1,6 +1,5 @@
 <template>
   <footer class="main-footer">
-    
     <div class="container footer-wrapper">
       <div class="row">
         <div v-for="section in footerSections" :key="section.title" 
@@ -21,7 +20,6 @@
         {{ data.copy }}
       </p>
     </div>
-
   </footer>
 </template>
 

@@ -7,6 +7,7 @@
       <tbody>
         <tr v-for="link in theLinks">
           <td> 
+           {{ link }}
             <a :href="link.link" class="mb-5 small">
               {{ link.term }}
             </a>

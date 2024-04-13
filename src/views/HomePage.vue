@@ -1,10 +1,10 @@
 <template>
   <div id="dashboard">
+
     <section class="dashboard-menu sticky-top side-menu">
       <div class="pt-4 d-flex flex-sm-column flex-nowrap align-items-center sticky-top">
 
-        <ul
-          class="nav flex-sm-column flex-row flex-nowrap text-center align-items-center">
+        <ul class="nav flex-sm-column flex-row flex-nowrap text-center align-items-center">
           <li>
             <a @click="forceRerender" class="d-block py-3 cursor-pointer" title="Reset Data">
               <BIconExclamationTriangleFill class="bi-icon fs-2" />
@@ -14,26 +14,23 @@
           <li>
             <a @click="toggleSettings" class="nav-link py-3" title="Details">
               <BIconGearWideConnected class="bi-icon fs-2" />
-              <div class="icon-label details">Details</div>
+              <div class="icon-label">Details</div>
             </a>
           </li>
-
           <li>
             <a href="/page/charts" class="nav-link py-3" title="Charts">
               <BIconGraphDown class="bi-icon fs-2" />
               <div class="icon-label">The Charts</div>
             </a>
           </li>
-
           <li>
-            <a href="#" class="nav-link py-3" title="Network">
+            <a href="/search/full" class="nav-link py-3" title="Network">
               <BIconHddNetworkFill class="bi-icon fs-2" />
-              <div class="icon-label details">The Network</div>
+              <div class="icon-label">The Links</div>
             </a>
           </li>
-
           <li>
-            <a href="/#logs" class="nav-link py-3 px-2" title="Logs">
+            <a href="/#logs" class="nav-link py-3" title="Logs">
               <BIconIncognito class="bi-icon fs-2" />
               <div class="icon-label">View Logs</div>
             </a>
@@ -41,27 +38,33 @@
         </ul>
 
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center justify-content-center py-4 text-decoration-none dropdown-toggle"
-            id="fake-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#" class="d-flex align-items-center py-3 text-decoration-none dropdown-toggle" id="fake-dropdown">
           </a>
         </div>
-        
-      </div>
 
+      </div>
     </section>
 
     <section class="dashboard-main">
+      
       <transition name="fade">
         <DashSettings v-if="showSettings" />
       </transition>
+      
       <DropDowns v-if="renderComponent" />
-       <div id="monitoring">
+      
+      <div id="monitoring">
         <MasonaryData />
       </div>
+      
       <MasonaryNews />
+      
       <DataStats v-if="renderComponent" />
+      
       <DataTable />
+      
       <TheTags />
+
       <div id="logs">
         <MasonaryLists />
       </div>

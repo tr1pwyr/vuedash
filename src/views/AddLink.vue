@@ -15,8 +15,8 @@
             </div>
 
             <div class="col-md-4 my-2">
-              <input class="form-control main" v-model="tags" type="text" placeholder="tags, comma, separated" name="tags"
-                id="form-tags" required>
+              <input class="form-control main" v-model="tags" type="text" placeholder="tags, comma, separated"
+                name="tags" id="form-tags" required>
             </div>
 
             <div class="col-md-2 my-2">
@@ -67,7 +67,7 @@
 
 .dark .form-control {
   background-color: #151416;
-  color: #fefefe!important;
+  color: #fefefe !important;
   border: 2px solid rgba(0, 0, 0, 0.33);
 }
 </style>
@@ -126,12 +126,22 @@ const addLink = () => {
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Success:', data);
+
       swal.fire({
-        title: 'Link Added',
-        text: 'Your link has been added to the site',
-        icon: 'success'
-      })
+        title: "Link Added",
+        text: "Your links has been added to the database",
+        icon: "info",
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: "Reload",
+        denyButtonText: `Don't refresh`
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload();
+        } else if (result.isDenied) {
+          console.log('link added')
+        }
+      });
     })
     .catch((error) => {
       console.error('Error:', error);
