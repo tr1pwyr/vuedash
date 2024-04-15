@@ -116,7 +116,6 @@ const addLink = () => {
     image: img.value,
   }
 
-  // post to the server at http://localhost:3030/link
   fetch('http://localhost:3030/link', {
     method: 'POST',
     headers: {
