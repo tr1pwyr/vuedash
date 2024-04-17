@@ -18,8 +18,10 @@ You can get started with:
 ```npm run dev```
 
 ```npm run build```
+
+As of right now this dashboard depends on the simple backend that goes with it.  I will make the backend available as well asap.  If you know what you are doing it is simple to comment out the breaking calls, if not give me a week or two.
 		
-This dashboard was orginally built to be used with the [super simple Node Express backend ](#) I created but it does not depend on it as I have added sample data so the widgets show up.  I have left 3rd party api calls in tact where they make sense ( btc price, news headlines, etc. ).
+~~This dashboard was orginally built to be used with the [super simple Node Express backend ](#) I created but it does not depend on it as I have added sample data so the widgets show up.  I have left 3rd party api calls in tact where they make sense ( btc price, news headlines, etc. ).~~
 
 You are welcome to fork it, submit pull requests, etc. but it is early days - there will be breaking changes. 
 
