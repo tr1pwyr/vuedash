@@ -38,8 +38,14 @@
         </ul>
 
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center py-3 text-decoration-none dropdown-toggle" id="fake-dropdown">
+          <a href="#"
+          title="Scroll to Top" 
+          class="d-flex align-items-center py-3 dropdown-toggle-up">
           </a>
+        </div>
+
+        <div>
+          <WindowSize />
         </div>
 
       </div>
@@ -72,7 +78,6 @@
     </section>
 
   </div>
-
 </template>
 
 <script setup>
@@ -83,9 +88,10 @@ import DashSettings from "../components/dashboard/DashSettings.vue"
 import DataTable from "../components/shared/DataTable.vue"
 import DropDowns from "../components/shared/DropDowns.vue"
 import MasonaryData from "../components/shared/MasonaryData.vue"
-import MasonaryLists from "../components/shared/MasonaryLists.vue";
-import { store } from "../store";
-import { plByMonth } from '../js/data'
+import MasonaryLists from "../components/shared/MasonaryLists.vue"
+import WindowSize from "../components/shared/WindowSize.vue"
+// import { store } from "../store";
+
 import {
   BIconGearWideConnected,
   BIconGraphDown,
@@ -109,3 +115,18 @@ function toggleSettings() {
 }
 
 </script>
+
+
+<style>
+.dropdown-toggle-up::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-bottom: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-top: none;
+  border-left: 0.3em solid transparent;
+  text-decoration: none;
+}
+</style>

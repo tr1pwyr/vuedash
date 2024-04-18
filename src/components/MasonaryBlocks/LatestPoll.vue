@@ -6,7 +6,7 @@
 					<BIconPieChartFill />
 					Trump 43 Biden 35
 				</a> 
-				VDash Scrape and Compiled...
+				VDash Compiled...
 			</div>
 		</div>
 	</div>

@@ -3,7 +3,8 @@
     <nav class="navbar">
       <div class="brand">
         <a class="" href="/">
-          <BIconReception3 class="brand-icon" />VueDash.org
+          <BIconReception3 class="brand-icon" />
+          {{ store.info.sitename }}
         </a>
       </div>
       <div class="form-check form-switch">
@@ -15,9 +16,11 @@
 
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
+import { store } from "../../store";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 import { BIconReception3 } from "bootstrap-icons-vue";
+console.log(store.info.sitename)
 </script>
 
 <style>
