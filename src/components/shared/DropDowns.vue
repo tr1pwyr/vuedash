@@ -1,21 +1,6 @@
 <template>
 	<div id="drop-down">
-
-		<div class="d-flex justify-content-between headline">
-			
-			<div>
-				<div id="user-info" v-if="store?.username">
-        	Welcome: {{ store?.username }}
-    		</div>
-				<div id="login-link" v-else>
-					Not Logged in.  <a href="/login">Login Here</a>.
-				</div>
-			</div>
-			
-			<div id="display-time">{{ displayTime }}</div>
-
-		</div>
-
+		<SubHeader />
 		<div class="d-flex justify-content-between">
 			<section class="drop-downs">
 				<div class="d-flex justify-content-center ">
@@ -51,11 +36,11 @@
 </template>
 
 <script setup>
-import { ref, watch, computed, onBeforeUnmount } from 'vue'
-import Swal from "sweetalert2";
+import { ref, watch} from 'vue'
 import { BIconFire, BIconShieldFillCheck } from "bootstrap-icons-vue";
-import { useInterval } from '../../js/useInterval';
-import { store } from "../../store";
+import SubHeader from './SubHeader.vue'
+// import { useInterval } from '../../js/useInterval';
+// import { store } from "../../store";
 const choices = ['Reset Data', 'Update Data', 'Reboot System', 'Network Sec', 'IP Address Log', 'Threats', 'Cloud Services', 'User Devices', 'Sec Systems']
 const choice = ref(choices[0]);
 
@@ -78,18 +63,9 @@ const linkUrlMap = {
 
 const answer = ref('')
 const loading = ref(false)
-
 const rating = ref(93)
 const risk = ref(16)
-const displayTime = ref('')
-const time = ref(new Date());
 
-const logout = async () => {
-  localStorage.clear();
-  store.updateHasLogin(false);
-  store.updateName(null);
-  router.push("/login");
-};
 
 const updateData = async () => {
 	const n = Math.floor(Math.random() * 10)
@@ -139,15 +115,15 @@ const handleClick = async (url) => {
   }
 };
 
-const pulse= async => {
-	const randomNumber = Math.floor(Math.random() * 8) + 1;
-	if (randomNumber === 7) {
-		updateData();
-		console.log('The random number is 7!');
-	} else {
-		// console.log('The random number is not 7:', randomNumber);
-	}
-}
+// const pulse= async => {
+// 	const randomNumber = Math.floor(Math.random() * 8) + 1;
+// 	if (randomNumber === 7) {
+// 		updateData();
+// 		console.log('The random number is 7!');
+// 	} else {
+// 		// console.log('The random number is not 7:', randomNumber);
+// 	}
+// }
 
 watch(link, async () => {
   try {
@@ -176,17 +152,6 @@ watch(choice, async () => {
 	}
 })
  
-function intervalHandler() {
-	time.value = new Date();
-	pulse();
-}
-
-useInterval(intervalHandler);
-displayTime.value = computed(() => time.value.toTimeString());
-
-onBeforeUnmount(() => {
-	displayTime.value = null
-});
 
 </script>
 
@@ -206,31 +171,8 @@ onBeforeUnmount(() => {
 	}
 }
 
-@media screen and (max-width: 767.98px) {
-  .headline{ display: block!important;}
-}
-
 .drop-downs{
 	margin: 0 3rem;
-}
-
-#display-time {
-	text-align: right;
-	margin: 0 3.5rem 1.5rem 0;
-	font-size: 13px;
-	color: #555;
-}
-
-#user-info {
-	margin: 0 0 2rem 3.5rem;
-	font-size: 13px;
-	color: #555;
-}
-
-#login-link{
-	font-size: 13px;
-	color: #555;
-	margin-left: 3.5rem;
 }
 
 .drop-down-icons {

@@ -2,20 +2,13 @@
 import Header from './components/layout/TheHeader.vue'
 import Footer from './components/layout/TheFooter.vue'
 import { ref, onMounted } from "vue";
-import { RouterLink, RouterView, useRouter, useRoute } from "vue-router";
+import { RouterView, useRouter, useRoute } from "vue-router";
 import { store } from "./store";
 
 const router = useRouter();
 const route = useRoute();
 
 const info = ref({})
-
-const logout = async () => {
-  localStorage.clear();
-  store.updateHasLogin(false);
-  store.updateName(null);
-  router.push("/login");
-};
 
 async function get_info() {
   try {
@@ -53,10 +46,7 @@ onMounted(async () => {
 
 <template>
   <Header />
-  <!-- <h1 class="mt-5 pt-5">
-    oy: {{ info }}
-  </h1> -->
-  <section class="main-view">
+  <section class="main-view container-lg">
     <router-view :key="$route.fullPath" />
   </section>
   <Footer />
