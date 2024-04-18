@@ -29,7 +29,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import SectionTitle from "../shared/SectionTitle.vue"
+// import SectionTitle from "../shared/SectionTitle.vue"
 
 const content = ref(
   {

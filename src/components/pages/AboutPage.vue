@@ -167,7 +167,7 @@ const handleClick = () => {
   window.location.href = 'https://github.com/tr1pwyr/vuedash';
 }
 
-import { BIconBarChartFill, BIconCloudDownloadFill } from "bootstrap-icons-vue";
+import { BIconCloudDownloadFill } from "bootstrap-icons-vue";
 
 
 const content = ref(

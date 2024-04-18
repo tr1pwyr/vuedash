@@ -46,7 +46,7 @@ onMounted(async () => {
 
 <template>
   <Header />
-  <section class="main-view container-lg">
+  <section class="main-view container-xl">
     <router-view :key="$route.fullPath" />
   </section>
   <Footer />

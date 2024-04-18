@@ -1,8 +1,9 @@
 <template>
-  <footer class="main-footer">
+  <footer id="main-footer">
     <div class="container footer-wrapper">
       <div class="row">
-        <div v-for="section in footerSections" :key="section.title" 
+        <div v-for="section in footerSections" 
+          :key="section.title" 
           class="col-lg-3 col-md-6 col-sm-12">
           <h5>{{ section.title }}</h5>
           <ul class="list-unstyled">
